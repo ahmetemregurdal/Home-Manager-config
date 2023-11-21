@@ -2,8 +2,8 @@
 {
 	programs.gh = {
 		enable = true;
-		gh-dash = {
-			enable = true;
-		};
+	};
+	programs.gh-dash = {
+		enable = true;
 	};
 }
