@@ -6,5 +6,6 @@
 		./bash/bash.nix
 		./lsd.nix
 		./git.nix
+		./gh.nix
 	];
 }
