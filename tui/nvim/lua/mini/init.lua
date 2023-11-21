@@ -1,0 +1,7 @@
+require("user.mini.pairs")
+require("user.mini.cursorword")
+require("user.mini.operators")
+require("user.mini.comment")
+require("user.mini.tabline")
+require("user.mini.indentscope")
+require("user.mini.extra")

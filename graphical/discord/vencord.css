@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;300;400;500;700&display=swap');
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css');
+
+:root {
+  --accentcolor: 211,134,155;
+  --accentcolor2: 234,105,98;
+  --linkcolor: 125,174,163;
+  --mentioncolor: 216,166,87;
+  --textbrightest: 221,199,161;
+  --textbrighter: 212,190,152;
+  --textbright: 168,153,132;
+  --textdark: 146,131,116;
+  --textdarker: 124,111,100;
+  --textdarkest: 80,73,69;
+  --font: Fira Code;
+  --backgroundaccent: 60,56,54;
+  --backgroundprimary: 60,56,54;
+  --backgroundsecondary: 40,40,40;
+  --backgroundsecondaryalt: 40,40,40;
+  --backgroundtertiary: 29,32,33;
+  --backgroundfloating: 20,22,23;
+  --settingsicons: 1;
+}
+
+/* Any custom CSS below here */
+
+
