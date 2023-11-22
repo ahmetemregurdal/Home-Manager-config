@@ -16,5 +16,7 @@
 		python3Full
 		inetutils
 		_7zz
+		qbittorrent
+		whatsapp-for-linux
 	];
 }
