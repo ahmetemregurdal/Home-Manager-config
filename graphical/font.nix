@@ -62,7 +62,6 @@
 		 ];
 		})
 		rPackages.fontawesome
-		whatsapp-emoji-font
 	];
 }
 
