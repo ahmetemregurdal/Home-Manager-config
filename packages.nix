@@ -18,5 +18,6 @@
 		_7zz
 		qbittorrent
 		whatsapp-for-linux
+		libreoffice-fresh
 	];
 }
