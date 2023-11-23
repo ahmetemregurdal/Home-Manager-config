@@ -61,7 +61,17 @@
 			 "ProggyClean"
 		 ];
 		})
+		unifont
+		unifont_upper
 		rPackages.fontawesome
+		wine64Packages.fonts
+		winePackages.fonts
+		wineWowPackages.fonts
+		corefonts
+		vistafonts
+		noto-fonts
+		noto-fonts-emoji
+		junicode
 	];
 }
 

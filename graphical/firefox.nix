@@ -28,6 +28,8 @@
 				no-pdf-download
 				greasemonkey
 				github-file-icons
+				fastforwardteam
+				bitwarden
 			];
 			isDefault = true;
 			name = "aeg";
@@ -137,6 +139,14 @@
 						iconUpdateURL = "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png";
 						updateInterval = 24 * 60 * 60 * 1000;
 						definedAliases = [ "@gh" ];
+					};
+					"PyPi" = {
+						urls = [{
+							template = "https://pypi.org/search/?q={searchTerms}";
+						}];
+						iconUpdateURL = "https://pypi.org/static/images/logo-small.2a411bc6.svg";
+						updateInterval = 24 * 60 * 60 * 1000;
+						definedAliases = [ "@py" ];
 					};
 				};
 			};

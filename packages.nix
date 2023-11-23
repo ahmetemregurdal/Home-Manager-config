@@ -7,7 +7,6 @@
 		neofetch
 		nix-prefetch
 		protonvpn-gui
-		python311Packages.adblock
 		speedtest-cli
 		tldr
 		unzip
@@ -19,5 +18,9 @@
 		qbittorrent
 		whatsapp-for-linux
 		libreoffice-fresh
+		bitwarden
+		bitwarden-cli
+		age
+		lynx
 	];
 }
