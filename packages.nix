@@ -22,5 +22,6 @@
 		bitwarden-cli
 		age
 		lynx
+		virt-manager
 	];
 }

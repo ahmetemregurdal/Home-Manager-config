@@ -10,9 +10,10 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 		nur.url = "github:nix-community/NUR";
 		sops-nix.url = "github:Mic92/sops-nix";
+		stylix.url = "github:danth/stylix";
 	};
 
-	outputs = { nixpkgs, nur, home-manager, hyprland, sops-nix, ... }:
+	outputs = { nixpkgs, nur, home-manager, hyprland, sops-nix, stylix, ... }:
 	let
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};

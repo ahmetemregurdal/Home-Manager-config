@@ -9,11 +9,6 @@
 				"extensions.pocket.enabled" = false;
 				"extensions.InstallTriggerImpl.enabled" = true;
 				"browser.theme.content-theme" = 2;
-				"ui.textHighlightBackground" = "#0d3138";
-				"ui.textHighlightForeground" = "#ddc7a1";
-				"ui.textSelectAttentionBackground" = "#3c1f1e";
-				"ui.textSelectAttentionForeground" = "#ddc71a1";
-				"ui.textSelectDisabledBackground" = "#a89984";
 			};
 			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 				darkreader

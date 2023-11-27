@@ -5,5 +5,6 @@
 		./btop.nix
 		./tmux.nix
 		./vifm/vifm.nix
+		./vim.nix
 	];
 }
