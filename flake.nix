@@ -26,7 +26,6 @@
 					nixpkgs.config.allowBroken = true;
 				}
 				hyprland.homeManagerModules.default
-				{ wayland.windowManager.hyprland.enable = true; }
 				./home.nix
 			];
 		};

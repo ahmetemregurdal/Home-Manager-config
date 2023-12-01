@@ -24,5 +24,6 @@
 		lynx
 		virt-manager
 		timelimit
+		comma
 	];
 }
