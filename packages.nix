@@ -23,5 +23,6 @@
 		age
 		lynx
 		virt-manager
+		timelimit
 	];
 }

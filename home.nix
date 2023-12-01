@@ -1,6 +1,6 @@
 { pkgs, home-manager, config, nur, ... }:
 {
-	home.stateVersion = "23.11";
+	home.stateVersion = "24.05";
 	home.homeDirectory = "/home/aeg";
 	home.username = "aeg";
 	imports =[ 

@@ -1,7 +1,6 @@
 { pkgs, home-manager, config, ... }:
 {
 	wayland.windowManager.hyprland = {
-		enableNvidiaPatches = true;
 		xwayland.enable = true;
 		extraConfig = builtins.readFile ./hyprland.conf;
 	};
