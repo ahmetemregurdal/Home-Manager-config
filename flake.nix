@@ -9,11 +9,9 @@
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
 		nur.url = "github:nix-community/NUR";
-		sops-nix.url = "github:Mic92/sops-nix";
-		newm.url = "sourcehut:~atha/newm-atha";
 	};
 
-	outputs = { nixpkgs, nur, home-manager, hyprland, sops-nix, newm, ... }:
+	outputs = { nixpkgs, nur, home-manager, hyprland, ... }:
 	let
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
@@ -30,7 +28,6 @@
 				hyprland.homeManagerModules.default
 				{ wayland.windowManager.hyprland.enable = true; }
 				./home.nix
-				sops-nix.homeManagerModules.sops
 			];
 		};
 	};
