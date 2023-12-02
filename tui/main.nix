@@ -6,5 +6,6 @@
 		./tmux.nix
 		./vifm/vifm.nix
 		./vim.nix
+		./helix.nix
 	];
 }
