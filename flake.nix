@@ -7,11 +7,11 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		hyprland.url = "github:hyprwm/Hyprland";
+		#hyprland.url = "github:hyprwm/Hyprland";
 		nur.url = "github:nix-community/NUR";
 	};
 
-	outputs = { nixpkgs, nur, home-manager, hyprland, ... }:
+	outputs = { nixpkgs, nur, home-manager, ... }:
 	let
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
@@ -25,7 +25,7 @@
 					nixpkgs.config.allowUnfree = true;
 					nixpkgs.config.allowBroken = true;
 				}
-				hyprland.homeManagerModules.default
+				#hyprland.homeManagerModules.default
 				./home.nix
 			];
 		};
