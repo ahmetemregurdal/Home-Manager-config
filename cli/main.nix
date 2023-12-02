@@ -7,5 +7,6 @@
 		./lsd.nix
 		./git.nix
 		./gh.nix
+		./command-not-found.nix
 	];
 }
