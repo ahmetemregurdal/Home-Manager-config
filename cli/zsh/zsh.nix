@@ -20,5 +20,6 @@
 			tmux = "TERM=xterm-256color tmux";
 		};
 		syntaxHighlighting.enable = true;
+		initExtra = builtins.readFile ./zshrc;
 	};
 }

@@ -24,13 +24,13 @@
 			inherit pkgs;
 			modules = [
 				nur.hmModules.nur
+				nix-index-database.hmModules.nix-index
 				{
 					nixpkgs.overlays = [ nur.overlay ];
 					nixpkgs.config.allowUnfree = true;
 					nixpkgs.config.allowBroken = true;
 				}
 				./home.nix
-				nix-index-database.hmModules.nix-index
 			];
 		};
 	};
