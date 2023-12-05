@@ -25,5 +25,6 @@
 		virt-manager
 		timelimit
 		comma
+		ghidra-bin
 	];
 }
