@@ -26,5 +26,8 @@
 		timelimit
 		comma
 		ghidra-bin
+		cliphist
+		obs-studio
+		obs-cli
 	];
 }

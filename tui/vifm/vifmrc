@@ -138,7 +138,7 @@ command! reload :write | restart full
 " program.  There is also %FOREGROUND, which is useful for entering passwords.
 
 " Pdf
-fileviewer *.cpp,*.c,*.py,*.sh,*.css,*.html,*.nix,*.lua,*.json highlight -O xterm256 -s dante %c
+fileviewer *.cpp,*.c,*.py,*.sh,*.css,*.html,*.nix,*.lua,*.json,*.asm highlight -O xterm256 -s dante %c
 fileviewer *.md mdcat %c
 filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
 
