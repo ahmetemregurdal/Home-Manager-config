@@ -47,12 +47,15 @@ k("n", "<F5>", function()
 	if vim.bo.filetype == "python" then
 		vim.cmd(':TermExec cmd="python3 %:p" direction=float')
 	elseif vim.bo.filetype == "cpp" then
-		vim.cmd(":!g++ -O3 %:p -o ~/.cache/vim-autorun.out")
+		vim.cmd(":!g++ -O2 %:p -o ~/.cache/vim-autorun.out")
 		vim.cmd(":TermExec cmd='~/.cache/vim-autorun.out' direction=float")
 	elseif vim.bo.filetype == "c" then
-		vim.cmd(":!gcc -O3 %:p -o ~/.cache/vim-autorun.out")
+		vim.cmd(":!gcc -O2 %:p -o ~/.cache/vim-autorun.out")
 		vim.cmd(":TermExec cmd='~/.cache/vim-autorun.out' direction=float")
 	elseif vim.bo.filetype == "sh" then
 		vim.cmd(':TermExec cmd="bash %:p" direction=float')
+	elseif vim.bo.filetype == "kotlin" then
+		vim.cmd(":!kotlinc %:p -include-runtime -d ~/.cache/vim-autorun.jar")
+		vim.cmd(":TermExec cmd='java -jar ~/.cache/vim-autorun.jar' direction=float")
 	end
 end)

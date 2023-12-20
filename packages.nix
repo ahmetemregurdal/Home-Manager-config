@@ -6,7 +6,6 @@
 		jq
 		neofetch
 		nix-prefetch
-		protonvpn-gui
 		speedtest-cli
 		tldr
 		unzip
@@ -25,9 +24,14 @@
 		virt-manager
 		timelimit
 		comma
-		ghidra-bin
 		cliphist
 		obs-studio
 		obs-cli
+		kotlin
+		openjdk17-bootstrap
+		gnumake
+	];
+	nixpkgs.config.permittedInsecurePackages = [
+		"openssl-1.1.1w"
 	];
 }

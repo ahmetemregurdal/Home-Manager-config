@@ -12,5 +12,20 @@
 		(pkgs.writeScriptBin "hyprshot" (builtins.readFile ./hyprshot.sh))
 		grim
 		slurp
+		hyprnome
+		hyprkeys
+		hyprdim
+		hyprshade
+		polkit_gnome
 	];
+	home.file.".config/hypr/hyprshade.toml" = {
+		enable = true;
+		source = ./hyprshade.toml;
+		target = ".config/hypr/hyprshade.toml";
+	};
+	home.file.".config/hypr/shaders/blue-light-filter.glsl" = {
+		enable = true;
+		source = ./blue-light-filter.glsl;
+		target = ".config/hypr/shaders/blue-light-filter.glsl";
+	};
 }

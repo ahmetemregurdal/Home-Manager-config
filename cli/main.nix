@@ -7,5 +7,8 @@
 		./lsd.nix
 		./git.nix
 		./gh.nix
+		./fish.nix
+		./zoxide.nix
+		./fzf.nix
 	];
 }

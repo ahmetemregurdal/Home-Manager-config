@@ -7,8 +7,8 @@
 			name = "gruvbox-dark";
 		};
 		iconTheme = {
-			package = pkgs.gruvbox-dark-icons-gtk;
-			name = "oomox-gruvbox-dark";
+			package = pkgs.papirus-icon-theme;
+			name = "Papirus-Dark";
 		};
 		font = {
 			name = "Fira Code";
@@ -23,7 +23,7 @@
 	};
 	qt = {
 		enable = true;
-		platformTheme = "gtk";
+		platformTheme = "gtk3";
 	};
 	home.pointerCursor = {
 		package = pkgs.capitaine-cursors-themed;
