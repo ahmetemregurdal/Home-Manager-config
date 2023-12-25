@@ -23,7 +23,7 @@
 	};
 	qt = {
 		enable = true;
-		platformTheme = "gtk3";
+		platformTheme = "gtk";
 	};
 	home.pointerCursor = {
 		package = pkgs.capitaine-cursors-themed;

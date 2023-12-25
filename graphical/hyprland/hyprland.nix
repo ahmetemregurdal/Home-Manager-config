@@ -3,20 +3,18 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		xwayland.enable = true;
-		enableNvidiaPatches = true;
 		extraConfig = builtins.readFile ./hyprland.conf;
 	};
 	home.packages = with pkgs; [
 		xdg-desktop-portal-gtk
 		xdg-desktop-portal-hyprland
-		(pkgs.writeScriptBin "hyprshot" (builtins.readFile ./hyprshot.sh))
-		grim
-		slurp
+		hyprshot
 		hyprnome
 		hyprkeys
 		hyprdim
 		hyprshade
 		polkit_gnome
+		udiskie
 	];
 	home.file.".config/hypr/hyprshade.toml" = {
 		enable = true;

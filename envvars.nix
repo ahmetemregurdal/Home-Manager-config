@@ -9,5 +9,6 @@
 		LIBVA_DRIVER_NAME = "nvidia";
 		MOZ_ENABLE_WAYLAND = 1;
 		GAMEMODERUNEXEC = "nvidia-offload";
+		WLR_NO_HARDWARE_CURSORS = 1;
 	};
 }

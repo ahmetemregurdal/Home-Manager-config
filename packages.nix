@@ -30,6 +30,9 @@
 		kotlin
 		openjdk17-bootstrap
 		gnumake
+		solaar
+		wine64
+		cinnamon.nemo-with-extensions
 	];
 	nixpkgs.config.permittedInsecurePackages = [
 		"openssl-1.1.1w"
