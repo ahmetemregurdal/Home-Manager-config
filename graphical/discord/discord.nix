@@ -3,14 +3,8 @@
 	home.packages = [
 		(pkgs.discord.override {
 			withVencord = true;
-			withOpenASAR = true;
 		 })
 	];
-	home.file.".config/discord/settings.json" = {
-		enable = true;
-		source = ./openasar.json;
-		target = ".config/discord/settings.json";
-	};
 	home.file.".config/Vencord/settings/settings.json" = {
 		enable = true;
 		source = ./vencord.json;
