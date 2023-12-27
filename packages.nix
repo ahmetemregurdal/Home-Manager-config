@@ -30,7 +30,7 @@
 		kotlin
 		openjdk17-bootstrap
 		gnumake
-		solaar
+		piper
 		wine64
 		cinnamon.nemo-with-extensions
 	];

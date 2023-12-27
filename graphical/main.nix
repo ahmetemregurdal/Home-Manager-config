@@ -11,7 +11,6 @@
 		./font.nix
 		./rofi/rofi.nix
 		./discord/discord.nix
-		./prismlauncher/prismlauncher.nix
 		./notification.nix
 		./zathura.nix
 	];
