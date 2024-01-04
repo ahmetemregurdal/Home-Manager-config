@@ -33,6 +33,9 @@
 		piper
 		wine64
 		cinnamon.nemo-with-extensions
+		ydotool
+		doxygen
+		cmake
 	];
 	nixpkgs.config.permittedInsecurePackages = [
 		"openssl-1.1.1w"
