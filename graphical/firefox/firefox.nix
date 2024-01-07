@@ -3,12 +3,21 @@
 	programs.firefox = {
 		enable = true;
 		profiles.aeg = {
+			userChrome = builtins.readFile ./firefox.css;
+			userContent = builtins.readFile ./firefox.css;
 			id = 0;
 			settings = {
 				"browser.aboutConfig.showWarning" = false;
 				"extensions.pocket.enabled" = false;
 				"extensions.InstallTriggerImpl.enabled" = true;
 				"browser.theme.content-theme" = 2;
+				"browser.tabs.closeWindowWithLastTab" = false;
+				"browser.tabs.firefox-view" = false;
+				"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+				"layers.acceleration.force-enabled" = true;
+				"gfx.webrender.all" = true;
+				"layout.css.backdrop-filter.enabled" = true;
+				"svg.context-properties.content.enabled" = true;
 			};
 			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 				darkreader
@@ -16,7 +25,6 @@
 				vimium
 				ublock-origin
 				torrent-control
-				temporary-containers
 				sponsorblock
 				search-by-image
 				notifier-for-github
@@ -25,6 +33,11 @@
 				github-file-icons
 				fastforwardteam
 				bitwarden
+				tree-style-tab
+				clearurls
+				decentraleyes
+				disconnect
+				don-t-fuck-with-paste
 			];
 			isDefault = true;
 			name = "aeg";

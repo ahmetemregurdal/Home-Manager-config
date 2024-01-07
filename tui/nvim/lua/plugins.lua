@@ -84,6 +84,7 @@ lazy.setup({
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"DaeZak/crafttweaker-vim-highlighting",
 	"luckasRanarison/tree-sitter-hypr",
+	"SpaceVim/vim-swig",
 
 	-- Git
 	"lewis6991/gitsigns.nvim",

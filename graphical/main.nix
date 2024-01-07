@@ -4,7 +4,7 @@
 		./hyprland/hyprland.nix
 		./kitty.nix
 		./theme.nix
-		./firefox.nix
+		./firefox/firefox.nix
 		./thunderbird.nix
 		./wpaperd/wpaperd.nix
 		./waybar/waybar.nix

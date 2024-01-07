@@ -5,8 +5,10 @@
 		settings = {
 			mainBar = {
 				layer = "top";
-				margin-bottom = -10;
+				margin-bottom = 0;
 				margin-top = 5;
+				margin-right = 5;
+				margin-left = 5;
 				modules-left = [
 					"custom/launcher"
 					"cpu"

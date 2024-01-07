@@ -20,6 +20,10 @@
 			vf = "vifmrun";
 			lta = "lsd -A --tree";
 			tmux = "TERM=xterm-256color tmux";
+			"\"\\$\"" = " ";
+			"\"#\"" = "sudo ";
+			cptemp = "cp \${HOME}/Documents/olimpiyat/templates/template.cpp";
+			cpwhilet = "cp \${HOME}/Documents/olimpiyat/templates/whilet.cpp";
 		};
 		syntaxHighlighting.enable = true;
 		initExtra = builtins.readFile ./zshrc;

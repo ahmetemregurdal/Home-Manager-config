@@ -11,6 +11,10 @@
 			hx = "helix";
 			vf = "vifmrun";
 			tmux = "TERM=xterm-256color tmux";
+			"\"\\$\"" = " ";
+			"\"#\"" = "sudo ";
+			cptemp = "cp \${HOME}/Documents/olimpiyat/templates/template.cpp";
+			cpwhilet = "cp \${HOME}/Documents/olimpiyat/templates/whilet.cpp";
 		};
 	};
 }
