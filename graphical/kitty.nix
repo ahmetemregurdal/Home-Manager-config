@@ -7,7 +7,9 @@
 			package = pkgs.fira-code;
 			size = 12;
 		};
-		settings = { enable_audio_bell = false; };
+		settings = {
+			enable_audio_bell = false;
+		};
 		theme = "Gruvbox Material Dark Hard";
 	};
 }

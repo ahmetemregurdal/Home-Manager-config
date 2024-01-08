@@ -24,6 +24,7 @@
 			"\"#\"" = "sudo ";
 			cptemp = "cp \${HOME}/Documents/olimpiyat/templates/template.cpp";
 			cpwhilet = "cp \${HOME}/Documents/olimpiyat/templates/whilet.cpp";
+			d = "kitten diff";
 		};
 		syntaxHighlighting.enable = true;
 		initExtra = builtins.readFile ./zshrc;
