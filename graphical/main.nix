@@ -13,5 +13,6 @@
 		./discord/discord.nix
 		./notification.nix
 		./zathura.nix
+		./obs.nix
 	];
 }

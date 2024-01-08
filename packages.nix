@@ -25,7 +25,6 @@
 		timelimit
 		comma
 		cliphist
-		obs-studio
 		obs-cli
 		kotlin
 		openjdk17-bootstrap
