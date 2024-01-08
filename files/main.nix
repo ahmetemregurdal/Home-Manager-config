@@ -5,7 +5,7 @@
 			enable = true;
 			recursive = true;
 			source = ./cp-templates;
-			target = "~/Documents/olimpiyat/templates";
+			target = "Documents/olimpiyat/templates";
 		};
 	};
 }
