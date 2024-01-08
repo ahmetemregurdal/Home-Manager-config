@@ -18,6 +18,11 @@
 				"gfx.webrender.all" = true;
 				"layout.css.backdrop-filter.enabled" = true;
 				"svg.context-properties.content.enabled" = true;
+				"browser.homepage_welcome_url" = "https://ahmetemregurdal.github.io/newtabpage/index.html";
+				"browser.homepage_override_url" = "https://ahmetemregurdal.github.io/newtabpage/index.html";
+				"startup.homepage_override_url" = "https://ahmetemregurdal.github.io/newtabpage/index.html";
+				"startup.homepage_welcome_url" = "https://ahmetemregurdal.github.io/newtabpage/index.html";
+				"browser.startup.homepage" = "https://ahmetemregurdal.github.io/newtabpage/index.html";
 			};
 			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 				darkreader
@@ -38,6 +43,7 @@
 				decentraleyes
 				disconnect
 				don-t-fuck-with-paste
+				new-tab-override
 			];
 			isDefault = true;
 			name = "aeg";
