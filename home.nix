@@ -9,6 +9,7 @@
 		./graphical/main.nix
 		./packages.nix
 		./envvars.nix
+		./files/files.nix
 	];
 	programs.home-manager.enable = true;
 }
