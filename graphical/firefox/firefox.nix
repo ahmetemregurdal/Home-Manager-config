@@ -43,7 +43,6 @@
 				decentraleyes
 				disconnect
 				don-t-fuck-with-paste
-				new-tab-override
 			];
 			isDefault = true;
 			name = "aeg";

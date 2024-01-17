@@ -59,8 +59,14 @@ local progress = function()
 	return chars[index]
 end
 
+require("wpm").setup()
+
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+end
+
+local wpm = function()
+	return "wpm: " .. require("wpm").wpm()
 end
 
 lualine.setup({
@@ -77,7 +83,7 @@ lualine.setup({
 		lualine_b = { mode },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diff, spaces, "encoding", filetype, wpm },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},

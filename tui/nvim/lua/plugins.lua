@@ -41,6 +41,7 @@ lazy.setup({
 	"vifm/vifm.vim",
 	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 	"p00f/cphelper.nvim",
+	"jcdickinson/wpm.nvim",
 	{
 		"folke/zen-mode.nvim",
 		opts = {
