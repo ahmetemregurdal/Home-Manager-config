@@ -2,11 +2,11 @@
 {
 	programs.wpaperd = {
 		enable = true;
-		settings = { default = { path = "Pictures/wallpaper.png"; }; };
+		settings = { default = { path = "Pictures/wallpaper.jpg"; }; };
 	};
-	home.file."Pictures/wallpaper.png" = {
+	home.file."Pictures/wallpaper.jpg" = {
 		enable = true;
-		source = ./wallpaper.png;
-		target = "Pictures/wallpaper.png";
+		source = ./wallpaper.jpg;
+		target = "Pictures/wallpaper.jpg";
 	};
 }

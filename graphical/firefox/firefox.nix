@@ -38,7 +38,7 @@
 				github-file-icons
 				fastforwardteam
 				bitwarden
-				tree-style-tab
+				sidebery
 				clearurls
 				decentraleyes
 				disconnect

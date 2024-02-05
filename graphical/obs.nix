@@ -6,7 +6,6 @@
 			wlrobs
 			obs-vkcapture
 			obs-tuna
-			obs-backgroundremoval
 			obs-pipewire-audio-capture
 		];
 	};

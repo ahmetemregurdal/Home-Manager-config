@@ -2,7 +2,7 @@
 {
 	home.packages = with pkgs; [
 		brightnessctl
-		gcc
+		gccgo12
 		jq
 		neofetch
 		nix-prefetch
@@ -37,6 +37,7 @@
 		cmake
 		tetex
 		swig4
+		gimp
 	];
 	nixpkgs.config.permittedInsecurePackages = [
 		"openssl-1.1.1w"

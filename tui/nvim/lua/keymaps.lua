@@ -47,11 +47,11 @@ k("n", "<F5>", function()
 	if vim.bo.filetype == "python" then
 		vim.cmd(':TermExec cmd="python3 %:p" direction=float')
 	elseif vim.bo.filetype == "cpp" then
-		vim.cmd(":!g++ -O2 %:p -o ~/.cache/vim-autorun.out")
-		vim.cmd(":TermExec cmd='~/.cache/vim-autorun.out' direction=float")
+		vim.cmd(":!g++ -O2 -DLOCAL -std=c++20 %:p -o ~/.cache/vim-autorun.out >& ~/.cache/vim-autorun-error.txt")
+		vim.cmd(":TermExec cmd='cat ~/.cache/vim-autorun-error.txt; rm ~/.cache/vim-autorun-error.txt; ~/.cache/vim-autorun.out' direction=float")
 	elseif vim.bo.filetype == "c" then
-		vim.cmd(":!gcc -O2 %:p -o ~/.cache/vim-autorun.out")
-		vim.cmd(":TermExec cmd='~/.cache/vim-autorun.out' direction=float")
+		vim.cmd(":!gcc -O2 -DLOCAL %:p -o ~/.cache/vim-autorun.out >& ~/.cache/vim-autorun-error.txt")
+		vim.cmd(":TermExec cmd='cat ~/.cache/vim-autorun-error.txt; rm ~/.cache/vim-autorun-error.txt; ~/.cache/vim-autorun.out' direction=float")
 	elseif vim.bo.filetype == "sh" then
 		vim.cmd(':TermExec cmd="bash %:p" direction=float')
 	elseif vim.bo.filetype == "kotlin" then
