@@ -8,6 +8,8 @@
 #endif
 using namespace std;
 
+random_device rd;
+mt19937_64 rng(rd.entropy() != 0 ? rd() : chrono::high_resolution_clock::now().time_since_epoch().count());
 typedef uint16_t ush;
 typedef int64_t ll;
 typedef uint64_t ull;
@@ -21,8 +23,8 @@ typedef double d;
 #define I insert
 #define P push
 #define all(a) a.begin(), a.end()
-#define iterative __attribute__((always_inline))
-template<typename T> iterative inline T sqr(T const& a) { return a*a; }
+#define iterative __attribute__((always_inline)) inline
+template<typename T> iterative T sqr(T const& a) { return a*a; }
 typedef int v8si __attribute__((vector_size(32)));
 typedef uint v8ui __attribute__((vector_size(32)));
 typedef ll v4sl __attribute__((vector_size(32)));
@@ -54,8 +56,10 @@ template <> struct vec_member_count<v2ld>:int_type<2> {};
 template <> struct vec_member_count<v16ss>:int_type<16> {};
 template <> struct vec_member_count<v16us>:int_type<16> {};
 constexpr uint MOD = 1e9+7;
+constexpr uint mod = 998244353;
+constexpr ld PI = M_PIl;
 template <typename T, enable_if_t<(!is_floating_point<T>::value)&&(!has_vec_attr<T>::value), bool> = true>
-iterative inline T binpow(T a, ull b) {
+iterative T binpow(T a, ull b) {
 	T ret = 1;
 	while(b) {
 		if(b&1) ret *= a;
@@ -70,7 +74,7 @@ T binpow(T const& a, ull const& b) {
 	return sqr(fastpow(a, b/2))*((b%2==1)?a:1);
 }
 template <typename T, enable_if_t<(!is_floating_point<T>::value) && (!has_vec_attr<T>::value), bool> = true>
-iterative inline T binpow(T a, ull b, int const& mod) {
+iterative T binpow(T a, ull b, int const& mod) {
 	T ret = 1;
 	while(b) {
 		if(b&1) {
@@ -84,7 +88,7 @@ iterative inline T binpow(T a, ull b, int const& mod) {
 	return ret;
 }
 template <typename T, enable_if_t<has_vec_attr<T>::value && (!is_floating_point<T>::value), bool> = true> 
-iterative inline T binpow(T a, ull b) {
+iterative T binpow(T a, ull b) {
 	T ret;
 	for(int i=0; i<vec_member_count<T>::value; i++) ret[i] = 1;
 	while(b) {
@@ -95,7 +99,7 @@ iterative inline T binpow(T a, ull b) {
 	return ret;
 }
 template <typename T, enable_if_t<(!is_floating_point<T>::value) && has_vec_attr<T>::value, bool> = true>
-iterative inline T binpow(T a, ull b, int const& mod) {
+iterative T binpow(T a, ull b, int const& mod) {
 	T ret;
 	for(int i=0; i<vec_member_count<T>::value; i++) ret[i] = 1;
 	while(b) {
@@ -109,40 +113,80 @@ iterative inline T binpow(T a, ull b, int const& mod) {
 	}
 	return ret;
 }
-template <uint mod = MOD> struct mint{
+template <uint mod = MOD> struct mint {
 	uint value;
-	iterative inline mint(uint a = 0):value(a) {}
-	iterative inline bool operator<(mint const& rhs) const {return this->value < rhs.value;}
-	iterative inline bool operator>(mint const& rhs) const {return this->value > rhs.value;}
-	iterative inline bool operator<=(mint const& rhs) const {return this->value <= rhs.value;}
-	iterative inline bool operator>=(mint const& rhs) const {return this->value >= rhs.value;}
-	iterative inline bool operator==(mint const& rhs) const {return this->value == rhs.value;}
-	iterative inline bool operator!=(mint const& rhs) const {return this->value != rhs.value;}
-	iterative inline mint operator+(mint const& rhs) const{
+	iterative mint(uint a = 0):value(a) {}
+	iterative bool operator<(mint const& rhs) const {return this->value < rhs.value;}
+	iterative bool operator>(mint const& rhs) const {return this->value > rhs.value;}
+	iterative bool operator<=(mint const& rhs) const {return this->value <= rhs.value;}
+	iterative bool operator>=(mint const& rhs) const {return this->value >= rhs.value;}
+	iterative bool operator==(mint const& rhs) const {return this->value == rhs.value;}
+	iterative bool operator!=(mint const& rhs) const {return this->value != rhs.value;}
+	iterative mint operator+(mint const& rhs) const{
 		uint ret = this->value + rhs.value;
 		if(ret > mod) ret -= mod;
 		return mint(ret);
 	}
-	iterative inline mint operator-(mint const& rhs) const {
+	iterative mint operator-(mint const& rhs) const {
 		if(this->value < rhs.value)
 			return mint(this->value + (mod - rhs.value));
 		else return mint(this->value - rhs.value);
 	}
-	iterative inline mint operator*(mint const& rhs) const {
+	iterative mint operator*(mint const& rhs) const {
 		ull ret = 1ll * this->value * rhs.value;
 		return mint(ret % mod);
 	}
-	iterative inline mint reverse() const {
+	iterative mint reverse() const {
 		return mint(binpow(value, mod - 2, mod));
 	}
-	iterative inline mint operator/(mint const& rhs) const {
+	iterative mint operator/(mint const& rhs) const {
 		return this->operator*(reverse(rhs));
 	}
-	friend iterative inline mint binpow(mint const& a, ull const& b) {
+	friend iterative mint binpow(mint const& a, ull const& b) {
 		return mint(binpow(a.value, b, mod));
 	}
 };
+struct chash {
+	static constexpr ll C = ll(2e18 * PI) + 70;
+	const ll RANDOM = rng();
+	const ll B = uniform_int_distribution<ll>(0, MOD - 1)(rng);
+	const ll b = uniform_int_distribution<ll>(0, mod - 1)(rng);
+	template <typename T1, typename T2> iterative size_t operator()(pair<T1, T2> const& x) const;
+	template <typename T> iterative size_t operator()(vector<T> const& x) const;
+	template <typename T, size_t n> iterative size_t operator()(array<T, n> const& x) const;
+	template <typename T, enable_if_t<is_integral<T>::value, bool> = true>
+	iterative size_t operator()(T const& x) const {
+		return __builtin_bswap64((ll(x)^RANDOM)*C);
+	}
+};
+template <typename T1, typename T2> iterative size_t chash::operator()(pair<T1, T2> const& x) const {
+	return this->operator()((this->operator()(x.F) % MOD + ((this->operator()(x.S) % MOD) * B) % MOD) % MOD);
+}
+template <typename T> iterative size_t chash::operator()(vector<T> const& x) const {
+	int curh = 0;
+	int curb = 1;
+	for(int i=0; i<x.size(); i++) {
+		curh += ((this->operator()(x[i])%MOD) * curb)%MOD;
+		curh %= MOD;
+		curb *= B;
+		curb %= MOD;
+	}
+	return this->operator()(curh);
+}
+template <typename T, size_t n> iterative size_t chash::operator()(array<T, n> const& x) const {
+	int curh = 0;
+	int curb = 1;
+	for(int i=0; i<n; i++) {
+		curh += ((this->operator()(x[i])%MOD) * curb)%MOD;
+		curh %= MOD;
+		curb *= B;
+		curb %= MOD;
+	}
+	return this->operator()(curh);
+}
 template <typename T, typename compfn = less<T>> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, compfn, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;
+template <typename T1, typename T2> using cmap = __gnu_pbds::gp_hash_table<T1, T2, chash>;
+template <typename T, typename compfn = less<T>> using cpq = __gnu_pbds::priority_queue<T, compfn, __gnu_pbds::rc_binomial_heap_tag>;
 
 int main() {
 	#ifdef LOCAL
