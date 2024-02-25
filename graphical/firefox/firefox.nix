@@ -43,6 +43,7 @@
 				decentraleyes
 				disconnect
 				don-t-fuck-with-paste
+				link-cleaner
 			];
 			isDefault = true;
 			name = "aeg";

@@ -38,6 +38,8 @@
 		tetex
 		swig4
 		gimp
+		cool-retro-term
+		w3m
 	];
 	nixpkgs.config.permittedInsecurePackages = [
 		"openssl-1.1.1w"
