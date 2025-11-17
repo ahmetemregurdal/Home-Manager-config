@@ -20,7 +20,6 @@
 				./hardware-configuration.nix
 				./configuration.nix
 				home-manager.nixosModules.home-manager
-				stylix.nixosModules.stylix
 				{
 					home-manager = {
 						useGlobalPkgs = true;
@@ -29,6 +28,7 @@
 					};
 				}
 				./options.nix
+				./modules/system/default.nix
 			];
 		};
 	};
