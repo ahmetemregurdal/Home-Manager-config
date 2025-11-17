@@ -1,4 +1,4 @@
-{lib, config, pkgs, inputs, ...}:
+{lib, config, pkgs, ...}:
 
 let 
 cfg = config.systemSettings.stylix;
@@ -11,12 +11,11 @@ in
 			theme = lib.mkOption {
 				default = "gruvbox-dark-medium";
 				type = lib.types.enum (builtins.attrNames (lib.filterAttrs (name: type: type == "directory") (builtins.readDir ../../themes)));
-				description "Theme to use for stylix";
+				description  = "Theme to use for stylix";
 			};
 		};
 	};
 
-	imports = [ inputs.stylix.nixosModules.stylix ];
 	config = lib.mkIf cfg.enable {
 		stylix = {
 			enable = true;
