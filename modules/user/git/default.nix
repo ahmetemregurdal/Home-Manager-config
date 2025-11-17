@@ -11,8 +11,12 @@ in
 	config = lib.mkIf cfg.enable {
 		programs.git = {
 			enable = true;
-			userName = config.userSettings.name;
-			userEmail = config.userSettings.email;
+			settings = {
+				user = {
+					name = config.userSettings.name;
+					email = config.userSettings.email;
+				};
+			};
 			lfs.enable = true;
 		};
 	};
