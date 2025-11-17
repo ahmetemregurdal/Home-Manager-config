@@ -23,8 +23,11 @@ let
 
 in
 {
+	home.stateVersion = "25.11";
 
-  imports = importAll ./.;
+  imports = (importAll ./.) ++ [
+	../../home-options.nix
+  ];
 
 }
 

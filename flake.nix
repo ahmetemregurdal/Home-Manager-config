@@ -25,7 +25,7 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
-						users.aeg = ./home.nix;
+						users.aeg = ./modules/user/default.nix;
 					};
 				}
 				./options.nix
