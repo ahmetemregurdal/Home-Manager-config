@@ -1,0 +1,23 @@
+{config, pkgs, ...}:
+
+{
+	programs.zsh = {
+		enable = true;
+		syntaxHighlighting.enable = true;
+		autosuggestion.enable = true;
+		history = {
+			ignoreAllDups = true;
+			ignoreDups = true;
+			extended = true;
+			share = true;
+		};
+		shellAliases = {
+			"ll" = "ls -l";
+			"la" = "ls -a";
+			"lla" = "ls -al";
+			"l" = "ls";
+			"c" = "clear";
+			"v" = "nvim";
+		};
+	};
+}
