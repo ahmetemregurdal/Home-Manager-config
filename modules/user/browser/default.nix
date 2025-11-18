@@ -18,7 +18,7 @@ in
 	};
 
 	config = {
-		userSettings.qutebrowser.enable = lib.mkIf (browser == "qutebrowser") true;
+		userSettings.qutebrowser.enable = lib.mkDefault (browser == "qutebrowser");
 
 		userSettings.spawnBrowser = lib.mkMerge [
 			(lib.mkIf (browser == "qutebrowser") "qutebrowser")

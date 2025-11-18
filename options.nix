@@ -4,10 +4,8 @@
 
 	config = {
 		systemSettings = {
-			stylix = {
-				enable = true;
-				theme = "gruvbox-dark-medium";
-			};
+			stylix.theme = "gruvbox-dark-medium";
+			niri.enable = true;
 		};
 	};
 }

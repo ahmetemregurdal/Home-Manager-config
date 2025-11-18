@@ -13,6 +13,13 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.dragAndDrop = true;
+  virtualisation.virtualbox.guest.seamless = true;
+  virtualisation.virtualbox.guest.clipboard = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.

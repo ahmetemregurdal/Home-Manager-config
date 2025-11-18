@@ -10,9 +10,12 @@
 			url = "github:nix-community/stylix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		niri = {
+			url = "github:sodiboo/niri-flake";
+		};
 	};
 
-	outputs = {self, nixpkgs, home-manager, stylix, ...}@inputs:
+	outputs = inputs@{self, nixpkgs, home-manager, stylix, niri, ...}:
 	{
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
@@ -20,17 +23,23 @@
 				./hardware-configuration.nix
 				./configuration.nix
 				home-manager.nixosModules.home-manager
-				stylix.nixosModules.stylix
 				{
+					nixpkgs.overlays = [niri.overlays.niri];
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
 						users.aeg = ./modules/user/default.nix;
+						extraSpecialArgs = {
+							inherit inputs;
+						};
 					};
 				}
 				./options.nix
 				./modules/system/default.nix
 			];
+			specialArgs = {
+				inherit inputs;
+			};
 		};
 	};
 }
