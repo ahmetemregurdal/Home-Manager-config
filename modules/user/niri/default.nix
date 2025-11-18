@@ -24,6 +24,7 @@ in
 					"Mod+T".action.spawn = term;
 					"Mod+D".action.spawn = "fuzzel";
 				};
+				prefer-no-csd = true;
 			};
 		};
 		stylix.targets.niri.enable = true;

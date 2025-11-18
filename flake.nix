@@ -13,9 +13,10 @@
 		niri = {
 			url = "github:sodiboo/niri-flake";
 		};
+		chaotic.url = "github:chaotic-cx/nyx";
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, stylix, niri, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, stylix, ...}:
 	{
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
@@ -23,6 +24,7 @@
 				./hardware-configuration.nix
 				./configuration.nix
 				home-manager.nixosModules.home-manager
+				chaotic.nixosModules.default
 				{
 					nixpkgs.overlays = [niri.overlays.niri];
 					home-manager = {

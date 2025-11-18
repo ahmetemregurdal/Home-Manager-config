@@ -7,18 +7,11 @@
 {
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = false;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.dragAndDrop = true;
-  virtualisation.virtualbox.guest.seamless = true;
-  virtualisation.virtualbox.guest.clipboard = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -43,7 +36,6 @@
   services.xserver.enable = true;
 
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -79,9 +71,6 @@
 
   programs.zsh.enable = true;
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -89,7 +78,8 @@
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
-     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  	git
+	neovim
   #  wget
   ];
 
