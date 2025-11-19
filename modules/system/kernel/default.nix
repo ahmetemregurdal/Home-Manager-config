@@ -6,10 +6,10 @@ in
 {
 	options = {
 		systemSettings.cachy = {
-			enable = lib.mkEnableOption "Enable cachyos kernel"
+			enable = lib.mkEnableOption "Enable cachyos kernel";
 			variant = lib.mkOption {
 				default = null;
-				type = lib.types.nullOr (lib.types.enum ["lto" "lts" "server" "hardened"];
+				type = lib.types.nullOr (lib.types.enum ["lto" "lts" "server" "hardened"]);
 				description = "CachOS kernel cariant to use";
 			};
 		};

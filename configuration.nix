@@ -10,7 +10,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = false;
 
-  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -62,15 +61,6 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.aeg = {
-    isNormalUser = true;
-    description = "Ahmet Emre Gurdal";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
-
-  programs.zsh.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
