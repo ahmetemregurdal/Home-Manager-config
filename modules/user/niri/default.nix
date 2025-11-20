@@ -36,6 +36,10 @@ in
 					"Mod+E".action = spawn-sh spawnEditor;
 					"XF86AudioRaiseVolume".action = spawn-sh "exec swayosd-client --output-volume=raise";
 					"XF86AudioLowerVolume".action = spawn-sh "exec swayosd-client --output-volume=lower";
+					"XF86AudioMute".action = spawn-sh "exec swayosd-client --output-volume=mute-toggle";
+					"XF86AudioMicMute".action = spawn-sh "exec swayosd-client --input-volume=mute-toggle";
+					"XF86MonBrightnessUp".action = spawn-sh "exec swayosd-client --brightness=raise";
+					"XF86MonBrightnessDown".action = spawn-sh "exec swayosd-client --brightness=lower";
 					"Mod+Shift+E".action = quit { skip-confirmation = true;};
 					"Mod+O".action = toggle-overview;
 					"Mod+Shift+F".action = fullscreen-window;
