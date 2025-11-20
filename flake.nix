@@ -36,7 +36,6 @@
 		value = lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
-				./configuration.nix
 				{ config.networking.hostName = host; }
 				home-manager.nixosModules.home-manager
 				chaotic.nixosModules.default
