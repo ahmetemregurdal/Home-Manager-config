@@ -23,6 +23,9 @@ in
 		userSettings.stylix.enable = true;
 		home.sessionVariables = {
 			XDG_CURRENT_DESKTOP = "Niri";
+			NIXOS_OZONE_WL = "1";
+			ELECTRON_OZONE_PLATFORM_HINT = "auto";
+			XDG_SESSION_TYPE = "wayland";
 		};
 		programs.niri = {
 			settings = {
