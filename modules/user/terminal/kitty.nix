@@ -17,6 +17,11 @@ in
 			enable = true;
 			settings = {
 				configm_os_window_close = 0;
+				enable_audio_bell = false;
+			};
+			keybindings = {
+				"ctrl+equal" = "change_font_size all +2.0";
+				"ctrl+minus" = "change_font_size all -2.0";
 			};
 		};
 	};
