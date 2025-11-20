@@ -11,6 +11,7 @@
 			languages = {
 				cpp.enable = true;
 			};
+			nixcord.enable = true;
 		};
 	};
 }

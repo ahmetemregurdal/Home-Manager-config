@@ -18,6 +18,9 @@
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nixcord = {
+			url = "github:kaylorben/nixcord";
+		};
 	};
 
 	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, stylix, nixvim, ...}:
@@ -39,6 +42,7 @@
 				chaotic.nixosModules.default
 				{
 					nixpkgs.overlays = [niri.overlays.niri];
+					home-manager.useGlobalPkgs = true;
 					home-manager.extraSpecialArgs = {
 						inherit inputs;
 						inherit nixpkgs;
