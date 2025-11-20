@@ -48,6 +48,7 @@ in
 			};
 
 			targets.console.enable = true;
+			targets.plymouth.enable = true;
 		};
 	};
 }
