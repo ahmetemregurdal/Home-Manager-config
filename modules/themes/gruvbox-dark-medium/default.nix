@@ -4,8 +4,8 @@
   author = "Dawid Kurek (dawikur@gmail.com) and morhetz (https://github.com/morhetz/gruvbox)";
   description = "Retro groove color scheme (originally for Vim)";
   polarity = "dark";
-  backgroundUrl = "https://w.wallhaven.cc/full/39/wallhaven-3911w9.jpg";
-  backgroundSha256 = "sha256-dBmKkLR8yI1W7d9IRTOaErHf0KApSq0UsY5LWxAaSuA=";
+  backgroundUrl = "https://raw.githubusercontent.com/lunik1/nixos-logo-gruvbox-wallpaper/master/png/gruvbox-dark-rainbow.png";
+  backgroundSha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
   base00 = "282828";
   base01 = "3c3836";
   base02 = "504945";
