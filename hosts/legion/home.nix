@@ -4,7 +4,7 @@
 	config = {
 		userSettings = {
 			browser = "qutebrowser";
-			terminal = "foot";
+			terminal = "kitty";
 			editor = "nixvim";
 			git.enable = true;
 			xdg.enable = true;
