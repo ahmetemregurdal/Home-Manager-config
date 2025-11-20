@@ -17,6 +17,8 @@ in
 		stylix.targets.nixcord.enable = true;
 		programs.nixcord = {
 			enable = true;
+			discord.enable = true;
+			vesktop.enable = true;
 		};
 	};
 }
