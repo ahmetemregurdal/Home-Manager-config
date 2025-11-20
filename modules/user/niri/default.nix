@@ -3,7 +3,10 @@
 let
 	cfg = config.userSettings.niri;
 	font = config.stylix.fonts.monospace.name;
-	term = config.userSettings.spawnTerminal;
+	term = config.userSettings.terminal;
+	spawnTerm = config.userSettings.spawnTerminal;
+	spawnBrowser = config.userSettings.spawnBrowser;
+	spawnEditor = config.userSettings.spawnEditor;
 in
 {
 	options = {
@@ -26,6 +29,8 @@ in
 				binds = with config.lib.niri.actions; {
 					"Mod+T".action = spawn term;
 					"Mod+D".action = spawn "fuzzel";
+					"Mod+B".action = spawn spawnBrowser;
+					"Mod+E".action = spawn spawnEditor;
 					"XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
 					"XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
 					"Mod+Shift+E".action = quit { skip-confirmation = true;};
@@ -49,7 +54,7 @@ in
 				main = {
 					font = lib.mkForce (font + ":size=20");
 					show-actions = true;
-					terminal = term;
+					terminal = spawnTerm;
 				};
 			};
 		};
