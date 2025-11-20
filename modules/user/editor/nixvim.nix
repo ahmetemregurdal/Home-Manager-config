@@ -22,6 +22,9 @@ in
 			opts = {
 				number = true;
 				relativenumber = true;
+				tabstop = 2;
+				shiftwidth = 2;
+				smartindent = true;
 			};
 			lsp = {
 				inlayHints.enable = true;
