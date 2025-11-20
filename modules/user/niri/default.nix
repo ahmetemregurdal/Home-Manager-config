@@ -12,7 +12,7 @@ in
 	options = {
 		userSettings.niri = {
 			enable = lib.mkOption {
-				default = if (osConfig.systemSettings.niri.enable) then true else false;
+				default = osConfig.systemSettings.niri.enable;
 				type = lib.types.bool;
 				description = "Enable Niri HomeManager";
 			};

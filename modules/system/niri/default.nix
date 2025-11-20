@@ -17,5 +17,8 @@ in
 		};
 
 		services.upower.enable = true;
+		environment.systemPackages = with pkgs; [
+			xwayland-satellite
+		];
 	};
 }
