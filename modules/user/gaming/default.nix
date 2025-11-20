@@ -15,6 +15,8 @@ in
 	config = {
 		programs.lutris = {
 			enable = true;
+			defaultWinePackage = pkgs.proton-ge-bin;
+			steamPackage = osConfig.programs.steam.package;
 		};
 	};
 }
