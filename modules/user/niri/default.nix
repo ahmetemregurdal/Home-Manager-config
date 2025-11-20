@@ -60,5 +60,41 @@ in
 				};
 			};
 		};
+
+		stylix.targets.waybar.enable = true;
+		programs.waybar = {
+			enable = true;
+			settings = {
+				mainBar = {
+					layer = "top";
+					position = "top";
+					height = 30;
+					modules-left = [ "niri/workspaces" ];
+					modules-center = [ "clock" ];
+					
+					clock = {
+						timezone = "Europe/Istanbul";
+						interval = 60;
+						format = "{:%H:%M}  ";
+						tooltip-format = "<tt><small>{calendar}</small></tt>";
+						calendar = {
+							mode = "year";
+							mode-mon-col = 3;
+							weeks-pos = "right";
+							on-scroll = 1;
+							format = {
+								months = "<span color='#" + config.lib.stylix.colors.base06 + "'><b>{}</b></span>";
+								days = "<span color='#" + config.lib.stylix.colors.base0E + "'><b>{}</b></span>";
+								weeks = "<span color='#" + config.lib.stylix.colors.base0D + "'><b>W{}</b></span>";
+								weekdays = "<span color='#" + config.lib.stylix.colors.base0A + "'><b>{}</b></span>";
+								today = "<span color='#" + config.lib.stylix.colors.base08 + "'><b><u>{}</u></b></span>";
+							};
+						};
+					};
+				};
+			};
+
+			systemd.enable = true;
+		};
 	};
 }
