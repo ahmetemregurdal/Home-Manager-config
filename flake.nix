@@ -23,7 +23,7 @@
 		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, stylix, nixvim, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;

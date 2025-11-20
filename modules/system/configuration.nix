@@ -9,7 +9,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.plymouth.enable = true;
   boot.consoleLogLevel = 3;
   boot.initrd.verbose = false;

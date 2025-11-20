@@ -8,8 +8,9 @@
 			users = [ "aeg" ];
 			adminUsers = [ "aeg" ];
 			security.doas.enable = true;
-			cachy.enable = false;
+			cachy.enable = true;
 			bluetooth.enable = true;
+			gaming.enable = true;
 		};
 		home-manager.users.aeg.userSettings = {
 			name = "Ahmet Emre Gürdal";

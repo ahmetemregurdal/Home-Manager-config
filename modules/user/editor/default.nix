@@ -9,7 +9,7 @@ in
 		userSettings.editor = lib.mkOption {
 			default = "nixvim";
 			description = "Default editor";
-			type = lib.types.enum [ "nixvim" ];
+			type = lib.types.enum [ "nixvim" "helix" ];
 		};
 
 		userSettings.spawnEditor = lib.mkOption {
@@ -21,9 +21,11 @@ in
 
 	config = {
 		userSettings.nixvim.enable = lib.mkDefault (editor == "nixvim");
+		userSettings.helix.enable = lib.mkDefault (editor == "helix");
 
 		userSettings.spawnEditor = lib.mkMerge [
 			(lib.mkIf (editor == "nixvim") ("exec " + term + " -e nvim"))
+			(lib.mkIf (editor == "helix") ("exec " + term + " -e hx"))
 		];
 	};
 }
