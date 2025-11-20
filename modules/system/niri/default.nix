@@ -15,5 +15,7 @@ in
 			enable = true;
 			package = pkgs.niri-stable;
 		};
+
+		services.upower.enable = true;
 	};
 }

@@ -78,6 +78,7 @@ in
 					height = 30;
 					modules-left = [ "niri/workspaces" ];
 					modules-center = [ "clock" ];
+					modules-right = [ "backlight" ];
 					
 					clock = {
 						timezone = "Europe/Istanbul";
@@ -97,6 +98,12 @@ in
 								today = "<span color='#" + config.lib.stylix.colors.base08 + "'><b><u>{}</u></b></span>";
 							};
 						};
+					};
+
+					backlight = {
+						format = "{icon} {percent}%";
+						format-icons = [ "󰃜" "󰃛" "󰃚" "󰃞" "󰃝" "󰃟" "󰃠" ];
+						tooltip = false;
 					};
 				};
 			};
