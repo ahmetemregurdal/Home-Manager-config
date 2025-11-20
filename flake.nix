@@ -14,9 +14,13 @@
 			url = "github:sodiboo/niri-flake";
 		};
 		chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+		nixvim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, stylix, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, stylix, nixvim, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;

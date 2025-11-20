@@ -6,9 +6,10 @@
 
 {
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = false;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
 
@@ -63,13 +64,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
   	git
-	neovim
   #  wget
   ];
 

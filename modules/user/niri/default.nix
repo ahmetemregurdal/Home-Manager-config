@@ -20,9 +20,20 @@ in
 		userSettings.stylix.enable = true;
 		programs.niri = {
 			settings = {
-				binds = {
-					"Mod+T".action.spawn = term;
-					"Mod+D".action.spawn = "fuzzel";
+				binds = with config.lib.niri.actions; {
+					"Mod+T".action = spawn term;
+					"Mod+D".action = spawn "fuzzel";
+					"XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+					"XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
+					"Mod+Shift+E".action = quit { skip-confirmation = true;};
+					"Mod+O".action = toggle-overview;
+					"Mod+Shift+F".action = fullscreen-window;
+					"Mod+F".action = maximize-column;
+					"Mod+Q".action = close-window;
+					"Mod+H".action = focus-column-left;
+					"Mod+L".action = focus-column-right;
+					"Mod+J".action = focus-workspace-down;
+					"Mod+K".action = focus-workspace-up;
 				};
 				prefer-no-csd = true;
 			};

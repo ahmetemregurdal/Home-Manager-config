@@ -5,8 +5,12 @@
 		userSettings = {
 			browser = "qutebrowser";
 			terminal = "foot";
+			editor = "nixvim";
 			git.enable = true;
 			xdg.enable = true;
+			languages = {
+				cpp.enable = true;
+			};
 		};
 	};
 }
