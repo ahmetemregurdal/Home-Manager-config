@@ -82,7 +82,7 @@ in
 					clock = {
 						timezone = "Europe/Istanbul";
 						interval = 60;
-						format = "{:%H:%M}  ";
+						format = "{:%H:%M}";
 						tooltip-format = "<tt><small>{calendar}</small></tt>";
 						calendar = {
 							mode = "year";
