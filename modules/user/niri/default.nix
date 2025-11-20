@@ -34,8 +34,8 @@ in
 					"Mod+D".action = spawn "fuzzel";
 					"Mod+B".action = spawn-sh spawnBrowser;
 					"Mod+E".action = spawn-sh spawnEditor;
-					"XF86AudioRaiseVolume".action = spawn "exec" "swayosd-client" "--output-volume=raise";
-					"XF86AudioLowerVolume".action = spawn "exec" "swayosd-client" "--output-volume=lower";
+					"XF86AudioRaiseVolume".action = spawn-sh "exec swayosd-client --output-volume=raise";
+					"XF86AudioLowerVolume".action = spawn-sh "exec swayosd-client --output-volume=lower";
 					"Mod+Shift+E".action = quit { skip-confirmation = true;};
 					"Mod+O".action = toggle-overview;
 					"Mod+Shift+F".action = fullscreen-window;
