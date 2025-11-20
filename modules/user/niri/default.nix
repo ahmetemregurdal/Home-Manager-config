@@ -51,6 +51,9 @@ in
 					"Mod+K".action = focus-workspace-up;
 				};
 				prefer-no-csd = true;
+				spawn-at-startup = [
+					{ argv = [ "xwayland-satellite" ]; }
+				];
 			};
 		};
 		stylix.targets.niri.enable = true;

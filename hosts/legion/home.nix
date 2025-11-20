@@ -12,6 +12,7 @@
 				cpp.enable = true;
 			};
 			nixcord.enable = true;
+			signal.enable = true;
 		};
 	};
 }
