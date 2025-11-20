@@ -78,7 +78,7 @@ in
 					height = 30;
 					modules-left = [ "niri/workspaces" ];
 					modules-center = [ "clock" ];
-					modules-right = [ "backlight" ];
+					modules-right = [ "backlight" "wireplumber" ];
 					
 					clock = {
 						timezone = "Europe/Istanbul";
@@ -104,6 +104,13 @@ in
 						format = "{icon} {percent}%";
 						format-icons = [ "󰃜" "󰃛" "󰃚" "󰃞" "󰃝" "󰃟" "󰃠" ];
 						tooltip = false;
+					};
+
+					wireplumber = {
+						format = "{icon} {volume}%";
+						format-muted = " ";
+						tooltip = false;
+						format-icons = [ "" "" "" ];
 					};
 				};
 			};
