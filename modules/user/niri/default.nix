@@ -29,8 +29,8 @@ in
 				binds = with config.lib.niri.actions; {
 					"Mod+T".action = spawn term;
 					"Mod+D".action = spawn "fuzzel";
-					"Mod+B".action = spawn spawnBrowser;
-					"Mod+E".action = spawn spawnEditor;
+					"Mod+B".action = spawn-sh spawnBrowser;
+					"Mod+E".action = spawn-sh spawnEditor;
 					"XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
 					"XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
 					"Mod+Shift+E".action = quit { skip-confirmation = true;};

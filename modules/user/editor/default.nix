@@ -23,7 +23,7 @@ in
 		userSettings.nixvim.enable = lib.mkDefault (editor == "nixvim");
 
 		userSettings.spawnEditor = lib.mkMerge [
-			(lib.mkIf (editor == "nixvim") ("exec " + term + " -e " + editor))
+			(lib.mkIf (editor == "nixvim") ("exec " + term + " -e nvim"))
 		];
 	};
 }
