@@ -18,6 +18,9 @@ in
 
 	config = lib.mkIf cfg.enable {
 		userSettings.stylix.enable = true;
+		home.sessionVariables = {
+			XDG_CURRENT_DESKTOP = "Niri";
+		};
 		programs.niri = {
 			settings = {
 				binds = with config.lib.niri.actions; {
