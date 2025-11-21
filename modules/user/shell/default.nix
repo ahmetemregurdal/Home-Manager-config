@@ -21,21 +21,11 @@
 			"cd" = "z";
 		};
 	};
-	
+
 	userSettings.stylix.enable = true;
 	stylix.targets.starship.enable = true;
 	programs.starship = {
 		enable = true;
 		enableZshIntegration = true;
 	};
-
-	programs.zoxide = {
-		enable = true;
-		enableZshIntegration = true;
-	};
-
-	home.packages = with pkgs; [
-		onefetch
-		fastfetch
-	];
 }
