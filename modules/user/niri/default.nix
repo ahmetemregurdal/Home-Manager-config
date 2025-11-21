@@ -82,7 +82,7 @@ in
 					modules-left = [ "niri/workspaces" ];
 					modules-center = [ "clock" ];
 					modules-right = [ "backlight" "wireplumber" ];
-					
+
 					clock = {
 						timezone = "Europe/Istanbul";
 						interval = 60;
@@ -125,5 +125,9 @@ in
 			enable = true;
 			topMargin = 0.9;
 		};
+
+		home.packages = with pkgs; [
+			dmenu-bluetooth
+		];
 	};
 }

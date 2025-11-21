@@ -26,9 +26,13 @@
 			url = "github:kaylorben/nixcord";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		vlc = {
+			url = "path:./overlays/vlc";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;
@@ -47,6 +51,9 @@
 				{
 					nixpkgs.overlays = [
 						niri.overlays.niri
+						(final: prev: {
+							libvlc = vlc.packages."x86_64-linux".vlc-optimized;
+						})
 					];
 					home-manager.useGlobalPkgs = true;
 					home-manager.extraSpecialArgs = {
