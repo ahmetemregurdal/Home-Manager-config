@@ -60,6 +60,7 @@ in
 			targets.gtk.enable = true;
 			targets.qt.enable = true;
 			targets.kde.enable = true;
+			targets.kde.decorations = "org.kde.breeze";
 		};
 		home.packages = with pkgs; [
 			kdePackages.breeze kdePackages.breeze-icons
