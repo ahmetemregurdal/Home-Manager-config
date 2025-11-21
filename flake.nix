@@ -12,14 +12,19 @@
 		};
 		niri = {
 			url = "github:sodiboo/niri-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+		chaotic = {
+			url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 		nixvim = {
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		nixcord = {
 			url = "github:kaylorben/nixcord";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
@@ -40,7 +45,9 @@
 				home-manager.nixosModules.home-manager
 				chaotic.nixosModules.default
 				{
-					nixpkgs.overlays = [niri.overlays.niri];
+					nixpkgs.overlays = [
+						niri.overlays.niri
+					];
 					home-manager.useGlobalPkgs = true;
 					home-manager.extraSpecialArgs = {
 						inherit inputs;
