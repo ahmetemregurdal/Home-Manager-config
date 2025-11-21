@@ -15,6 +15,9 @@ in
 		stylix.targets.qutebrowser.enable = true;
 		programs.qutebrowser = {
 			enable = true;
+			settings = {
+				changelog_after_upgrade = "patch";
+			};
 		};
 	};
 }
