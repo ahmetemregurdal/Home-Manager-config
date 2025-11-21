@@ -81,7 +81,6 @@
 
   environment.systemPackages = with pkgs; [
   	git
-		libvlc-git
   #  wget
   ];
 
