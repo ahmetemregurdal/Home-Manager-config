@@ -86,6 +86,10 @@ in
 			plugins.mini-comment.enable = true;
 
 			plugins.mini-statusline.enable = true;
+
+			plugins.mini-trailspace.enable = true;
+
+			plugins.mini-git.enable = true;
 		};
 	};
 }
