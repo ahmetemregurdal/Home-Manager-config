@@ -9,6 +9,7 @@
 			users = [ "aeg" ];
 			adminUsers = [ "aeg" ];
 			security.doas.enable = true;
+			security.mullvad.enable = true;
 			cachy.enable = true;
 			bluetooth.enable = true;
 			gaming.enable = true;
