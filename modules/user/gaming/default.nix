@@ -12,11 +12,20 @@ in
 		};
 	};
 
-	config = {
+	config = lib.mkIf cfg.enable {
 		programs.lutris = {
 			enable = true;
 			defaultWinePackage = pkgs.proton-ge-bin;
 			steamPackage = osConfig.programs.steam.package;
+			winePackages = [ pkgs.proton-ge-bin ];
+			runners = {
+				wine = {
+					settings = {
+						runner = {
+						};
+					};
+				};
+			};
 		};
 	};
 }

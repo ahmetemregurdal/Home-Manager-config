@@ -64,7 +64,7 @@ in
 		};
 		home.packages = with pkgs; [
 			kdePackages.breeze kdePackages.breeze-icons
-			nerd-fonts.fira-code fira-sans twitter-color-emoji
+			nerd-fonts.fira-code fira-sans twitter-color-emoji adwaita-icon-theme
 		];
 
 		fonts.fontconfig.defaultFonts = {

@@ -1,4 +1,4 @@
-{lib, config, pkgs, ...}:
+{lib, config, pkgs, inputs, ...}:
 
 let
 	cfg = config.systemSettings.gaming;
@@ -9,6 +9,8 @@ in
 			enable = lib.mkEnableOption "Enable gaming packages";
 		};
 	};
+
+	imports = [ inputs.nix-gaming.nixosModules.platformOptimizations ];
 
 	config = lib.mkIf cfg.enable {
 		programs.gamemode = {
@@ -24,6 +26,7 @@ in
 			extraCompatPackages = with pkgs; [
 				proton-ge-bin
 			];
+			platformOptimizations.enable = true;
 		};
 
 		users.groups = {

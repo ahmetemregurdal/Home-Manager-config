@@ -2,10 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Bootloader.
+
+	imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -63,6 +66,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+		lowLatency.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
