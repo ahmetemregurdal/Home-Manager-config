@@ -17,6 +17,7 @@
 		chaotic = {
 			url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.home-manager.follows = "home-manager";
 		};
 		nixvim = {
 			url = "github:nix-community/nixvim";
@@ -29,6 +30,11 @@
 		vlc = {
 			url = "path:./overlays/vlc";
 			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		plasma-manager = {
+			url = "github:nix-community/plasma-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.home-manager.follows = "home-manager";
 		};
 	};
 
