@@ -32,7 +32,7 @@ in
 				servers = {
 					ccls.enable = language.cpp.enable;
 					nixd = {
-						enable = language.nix.enable;
+						enable = false;
 						config = {
 							formatting.command = [ "alejandra" "--experimental-config" "${config.home.homeDirectory}/.config/alejandra.toml" ];
 							nixpkgs.expr = "import (builtins.getFlake \"/etc/nixos\").inputs.nixpkgs { }";
