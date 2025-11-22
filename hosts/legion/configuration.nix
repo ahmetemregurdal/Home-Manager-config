@@ -4,6 +4,7 @@
 	config = {
 		systemSettings = {
 			stylix.theme = "gruvbox-dark-medium";
+			stylix.enable = true;
 			niri.enable = true;
 			users = [ "aeg" ];
 			adminUsers = [ "aeg" ];

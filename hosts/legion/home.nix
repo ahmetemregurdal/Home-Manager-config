@@ -6,6 +6,9 @@
 			browser = "qutebrowser";
 			terminal = "foot";
 			editor = "nixvim";
+			stylix.enable = true;
+			nixvim.enable = true;
+			helix.enable = true;
 			git.enable = true;
 			xdg.enable = true;
 			languages = {
