@@ -1,4 +1,4 @@
-{pkgs, config, lib, inputs, ...}:
+{pkgs, config, lib, inputs, osConfig, ...}:
 
 let
 cfg = config.userSettings.nixvim;
@@ -31,6 +31,16 @@ in
 				inlayHints.enable = true;
 				servers = {
 					ccls.enable = language.cpp.enable;
+					nixd = {
+						enable = language.nix.enable;
+						config = {
+							formatting.command = [ "alejandra" "--experimental-config" "${config.home.homeDirectory}/.config/alejandra.toml" ];
+							nixpkgs.expr = "import (builtins.getFlake \"/etc/nixos\").inputs.nixpkgs { }";
+							options = {
+								nixos = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
+							};
+						};
+					};
 				};
 			};
 			plugins.treesitter = {

@@ -10,6 +10,7 @@
 			xdg.enable = true;
 			languages = {
 				cpp.enable = true;
+				nix.enable = true;
 			};
 			nixcord.enable = true;
 			signal.enable = true;

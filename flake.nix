@@ -40,6 +40,10 @@
 			url = "github:fufexan/nix-gaming";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		alejandra = {
+			url = "github:kamadorueda/alejandra";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, ...}:
