@@ -58,6 +58,7 @@ in
 				};
 			};
 			targets.gtk.enable = true;
+			targets.qt.platform = "gtk3";
 			targets.qt.enable = true;
 			targets.kde.enable = true;
 			targets.kde.decorations = "org.kde.breeze";
