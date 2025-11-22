@@ -13,8 +13,11 @@
 			};
 			nixcord.enable = true;
 			signal.enable = true;
-			shell.useful.enable = true;
-			shell.useless.enable = true;
+			elisa.enable = true;
+			shell = {
+				useful.enable = true;
+				useless.enable = true;
+			};
 		};
 	};
 }
