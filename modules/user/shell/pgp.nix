@@ -5,7 +5,7 @@ let
 in
 {
 	options = {
-		userSettings.pgp.enable = lib.mkEnableOption "Enable pgp;
+		userSettings.pgp.enable = lib.mkEnableOption "Enable pgp";
 	};
 
 	config = lib.mkIf cfg.enable {

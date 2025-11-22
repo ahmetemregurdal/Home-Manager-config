@@ -9,7 +9,10 @@
 			stylix.enable = true;
 			nixvim.enable = true;
 			pgp.enable = true;
-			rbw.enable = true;
+			rbw = {
+				enable = true;
+				mail = "ahmetemregurdal2008@gmail.com";
+			};
 			helix.enable = true;
 			git.enable = true;
 			xdg.enable = true;
