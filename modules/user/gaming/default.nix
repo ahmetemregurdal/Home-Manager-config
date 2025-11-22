@@ -18,13 +18,8 @@ in
 			defaultWinePackage = pkgs.proton-ge-bin;
 			steamPackage = osConfig.programs.steam.package;
 			winePackages = [ pkgs.proton-ge-bin ];
+			protonPackages = [ pkgs.proton-ge-bin ];
 			runners = {
-				wine = {
-					settings = {
-						runner = {
-						};
-					};
-				};
 			};
 		};
 	};
