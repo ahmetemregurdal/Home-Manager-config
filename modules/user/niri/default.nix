@@ -125,5 +125,8 @@ in
 			enable = true;
 			topMargin = 0.9;
 		};
+		home.packages = with pkgs; [
+			wl-clipboard
+		];
 	};
 }

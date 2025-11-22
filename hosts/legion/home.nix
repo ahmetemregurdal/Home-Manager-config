@@ -8,6 +8,8 @@
 			editor = "nixvim";
 			stylix.enable = true;
 			nixvim.enable = true;
+			pgp.enable = true;
+			rbw.enable = true;
 			helix.enable = true;
 			git.enable = true;
 			xdg.enable = true;
