@@ -1,6 +1,5 @@
 {config, lib, pkgs, ...}:
 
-
 let
 	cfg = config.userSettings.helix;
 in

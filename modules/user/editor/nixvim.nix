@@ -85,21 +85,34 @@ in
 
 			plugins.mini-icons.enable = true;
 
-			plugins.mini-completion.enable = true;
-
 			plugins.lspconfig.enable = true;
 
 			plugins.mini-ai.enable = true;
 
-			plugins.mini-clue.enable = true;
+			plugins.blink-cmp = {
+				enable = true;
+				settings = {
+					completion.ghost_text = {
+						enabled = true;
+					};
+					fuzzy = {
+						implementation = "lua";
+					};
+				};
+			};
 
-			plugins.mini-comment.enable = true;
+			plugins.web-devicons.enable = true;
 
-			plugins.mini-statusline.enable = true;
+			plugins.codesnap.enable = true;
 
-			plugins.mini-trailspace.enable = true;
-
-			plugins.mini-git.enable = true;
+			plugins.comment-box.enable = true;
+			
+			plugins.competitest = {
+				enable = true;
+				settings = {
+					testcases_use_single_file = true;
+				};
+			};
 		};
 	};
 }
