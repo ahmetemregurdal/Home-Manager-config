@@ -23,5 +23,9 @@ in
 			enable = true;
 			enableZshIntegration = true;
 		};
+
+		home.packages = with pkgs; [
+			atool p7zip
+		];
 	};
 }

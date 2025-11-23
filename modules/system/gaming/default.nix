@@ -15,11 +15,9 @@ in
 	config = lib.mkIf cfg.enable {
 		programs.gamemode = {
 			enable = true;
-			enableRenice = true;
 		};
 		programs.gamescope = {
 			enable = true;
-			capSysNice = true;
 		};
 		programs.steam = {
 			enable = true;
