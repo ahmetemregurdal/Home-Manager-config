@@ -1,6 +1,6 @@
 {
-  scheme = "Gruvbox Dark, Medium";
-  slug = "gruvbox-dark-medium";
+  scheme = "Gruvbox Dark";
+  slug = "gruvbox-dark";
   author = "Dawid Kurek (dawikur@gmail.com) and morhetz (https://github.com/morhetz/gruvbox)";
   description = "Retro groove color scheme (originally for Vim)";
   polarity = "dark";

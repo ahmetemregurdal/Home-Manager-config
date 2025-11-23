@@ -18,6 +18,7 @@ in
 			settings = {
 				changelog_after_upgrade = "patch";
 				colors.webpage.preferred_color_scheme = config.stylix.polarity;
+				colors.webpage.darkmode.enabled = (config.stylix.polarity == "dark");
 			};
 		};
 	};

@@ -25,7 +25,7 @@ in
 		};
 
 		home.packages = with pkgs; [
-			atool p7zip
+			atool p7zip unrar
 		];
 	};
 }
