@@ -1,8 +1,0 @@
-keys:
-  - &host_legion age12lyqaaj5d9wq4w5s67436qljdj8v74j54tgp2vsp9x0zdpzchyfqftwnsw
-
-creation_rules:
-  - path_regex: secrets.yaml$
-    key_groups:
-    - age:
-      - *host_legion
