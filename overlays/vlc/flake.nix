@@ -15,7 +15,7 @@
 					leaveDotGit = true;
           url = "https://code.videolan.org/videolan/vlc.git";
           rev = "65f66c82bf35571e6096a434a0015b0ccc01ec5f"; # VLC 4 development branch
-          sha256 = "TLCYiTiaH0MJHZCQk9jIh7BFMYyLZ8C+q5ziyXiKW0A="; # Placeholder
+          sha256 = "vukADVxRMPESsBXwj+5KvHtBmoSpCNgLvew2d0wRt/g="; # Placeholder
         };
       in
       {

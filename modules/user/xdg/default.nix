@@ -26,5 +26,11 @@ in
 		};
 		xdg.mime.enable = true;
 		xdg.mimeApps.enable = true;
+
+		xdg.portal = {
+			enable = true;
+			extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+			config.common.default = "gtk";
+		};
 	};
 }

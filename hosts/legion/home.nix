@@ -16,7 +16,7 @@
 			helix.enable = true;
 			git.enable = true;
 			xdg.enable = true;
-			engineering.enable = true;
+			# engineering.enable = true;
 			languages = {
 				cpp.enable = true;
 				nix.enable = true;

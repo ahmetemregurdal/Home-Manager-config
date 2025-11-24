@@ -13,6 +13,7 @@ in
 	config = lib.mkIf cfg.enable {
 		userSettings.stylix.enable = true;
 		stylix.targets.yazi.enable = true;
+		stylix.targets.btop.enable = true;
 
 		programs.yazi = {
 			enable = true;
@@ -23,6 +24,8 @@ in
 			enable = true;
 			enableZshIntegration = true;
 		};
+
+		programs.btop.enable = true;
 
 		home.packages = with pkgs; [
 			atool p7zip unrar

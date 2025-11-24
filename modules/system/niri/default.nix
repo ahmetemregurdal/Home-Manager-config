@@ -13,7 +13,7 @@ in
 		systemSettings.stylix.enable = true;
 		programs.niri = {
 			enable = true;
-			package = pkgs.niri-stable;
+			package = pkgs.niri;
 		};
 
 		services.upower.enable = true;

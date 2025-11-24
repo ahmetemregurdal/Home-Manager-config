@@ -58,10 +58,9 @@ in
 				};
 			};
 			targets.gtk.enable = true;
-			targets.qt.platform = "gtk3";
 			targets.qt.enable = true;
+			targets.qt.platform = "gtk3";
 			targets.kde.enable = true;
-			targets.kde.decorations = "org.kde.breeze";
 		};
 		home.packages = with pkgs; [
 			kdePackages.breeze kdePackages.breeze-icons
@@ -73,5 +72,6 @@ in
 			sansSerif = [ config.stylix.fonts.sansSerif.name ];
 			serif = [ config.stylix.fonts.serif.name ];
 		};
+
 	};
 }
