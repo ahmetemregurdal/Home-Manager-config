@@ -5,10 +5,11 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "mt7921e" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "mt7921e" "amdgpu" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+	boot.kernelParams = [ "amd_pstate=active" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/06a1be43-5398-4976-b759-7e8e9053cae4";
@@ -30,13 +31,30 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-	modesetting.enable = true;
-	open = true;
-	nvidiaSettings = false;
-	package = config.boot.kernelPackages.nvidiaPackages.production;
+	services.tlp.enable = true;
+	services.fstrim.enable = true;
+  hardware = {
+		graphics = {
+			enable = true;
+			enable32Bit = true;
+		};
+		amdgpu.initrd.enable = false;
+		nvidia = {
+			modesetting.enable = true;
+			open = true;
+			nvidiaSettings = false;
+			powerManagement.enable = true;
+			package = config.boot.kernelPackages.nvidiaPackages.production;
+			prime = {
+				amdgpuBusId = "PCI:6:0:0";
+				nvidiaBusId = "PCI:1:0:0";
+				offload = {
+					enable = true;
+					enableOffloadCmd = true;
+				};
+			};
+		};
   };
 }
 
