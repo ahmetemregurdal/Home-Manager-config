@@ -21,5 +21,7 @@
 		users.users.aeg.description = "Ahmet Emre Gürdal";
 		users.users.aeg.shell = pkgs.zsh;
 		programs.zsh.enable = true;
+
+		sops.age.keyFile = "/home/aeg/.config/sops/age/keys.txt";
 	};
 }

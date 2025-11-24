@@ -44,9 +44,13 @@
 			url = "github:kamadorueda/alejandra";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		sops-nix = {
+			url = "github:Mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, sops-nix, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;
@@ -61,6 +65,7 @@
 			modules = [
 				{ config.networking.hostName = host; }
 				home-manager.nixosModules.home-manager
+				sops-nix.nixosModules.sops
 				chaotic.nixosModules.default
 				{
 					nixpkgs.overlays = [

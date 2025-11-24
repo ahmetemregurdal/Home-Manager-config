@@ -17,6 +17,12 @@ in
 			description = "Command to spawn editor";
 			type = lib.types.str;
 		};
+
+		userSettings.spawnEditorTerm = lib.mkOption {
+			default = "";
+			description = "Command to spawn editor";
+			type = lib.types.str;
+		};
 	};
 
 	config = {
@@ -27,5 +33,14 @@ in
 			(lib.mkIf (editor == "nixvim") ("exec " + term + " -e nvim"))
 			(lib.mkIf (editor == "helix") ("exec " + term + " -e hx"))
 		];
+
+		userSettings.spawnEditorTerm = lib.mkMerge [
+			(lib.mkIf (editor == "nixvim") "nvim")
+			(lib.mkIf (editor == "helix") "hx")
+		];
+
+		home.sessionVariables = {
+			EDITOR = config.userSettings.spawnEditorTerm;
+		};
 	};
 }
