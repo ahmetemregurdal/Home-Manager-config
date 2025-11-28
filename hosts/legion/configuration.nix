@@ -12,6 +12,7 @@
 			security.mullvad.enable = true;
 			cachy.enable = false;
 			bluetooth.enable = true;
+			displaymanager.enable = true;
 			gaming.enable = true;
 		};
 		home-manager.users.aeg.userSettings = {
