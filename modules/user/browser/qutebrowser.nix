@@ -38,6 +38,7 @@ in
 				scrolling.smooth = true;
 
 				downloads.remove_finished = 2000;
+				editor.command = config.userSettings.spawnEditorArgList ++ ["{}"];
 
 				tabs = {
 					position = "left";
