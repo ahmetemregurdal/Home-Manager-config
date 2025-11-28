@@ -49,6 +49,8 @@ in
 
 			targets.console.enable = true;
 			targets.plymouth.enable = true;
+			targets.regreet.enable = true;
+			targets.gtk.enable = true;
 		};
 	};
 }

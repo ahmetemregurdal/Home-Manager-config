@@ -51,7 +51,12 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm.enable = true;
+	services.greetd.enable = true;
+	services.greetd.settings.default_session = {
+		command = "${pkgs.cage}/bin/cage -s -mlast -- ${pkgs.regreet}/bin/regreet";
+		user = "greeter";
+	};
+	programs.regreet.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
