@@ -17,6 +17,13 @@ in
 		stylix.targets.qutebrowser.enable = true;
 		programs.qutebrowser = {
 			enable = true;
+			loadAutoconfig = true;
+			greasemonkey = [
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/461288/Bullyforces.user.js";
+					sha256 = "1ppp1babzai5ch19pz051gq1zqqhmcjpwsld0gidryxwpx03gdr2";
+				})
+			];
 			settings = {
 				changelog_after_upgrade = "patch";
 				colors.webpage = {
@@ -35,7 +42,7 @@ in
 				tabs = {
 					position = "left";
 					favicons.scale = 1.0;
-					width = "3%";
+					width = "4%";
 					show = "multiple";
 					title.format = "{index} {audio}";
 				};
