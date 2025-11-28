@@ -16,7 +16,7 @@ in
 	};
 
 	config = lib.mkIf cfg.enable {
-		boot.kernelPackages = lib.mkMerge [
+		boot.kernelPackages = lib.mkForce lib.mkMerge [
 			(lib.mkIf (cfg.variant == null) pkgs.linuxPackages_cachyos)
 			(lib.mkIf (cfg.variant == "lts") pkgs.linuxPackages_cachyos-lts)
 			(lib.mkIf (cfg.variant == "lto") pkgs.linuxPackages_cachyos-lto)

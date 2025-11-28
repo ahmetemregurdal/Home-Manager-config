@@ -44,9 +44,14 @@
 			url = "github:kamadorueda/alejandra";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		nix-index-database = {
+			url = "github:nix-community/nix-index-database";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, nix-index-database, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;
@@ -62,6 +67,8 @@
 				{ config.networking.hostName = host; }
 				home-manager.nixosModules.home-manager
 				chaotic.nixosModules.default
+				nix-index-database.nixosModules.nix-index
+				{ programs.nix-index-database.comma.enable = true; }
 				{
 					nixpkgs.overlays = [
 						niri.overlays.niri

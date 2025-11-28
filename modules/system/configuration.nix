@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   # Bootloader.
@@ -15,6 +15,8 @@
   boot.plymouth.enable = true;
   boot.consoleLogLevel = 3;
   boot.initrd.verbose = false;
+
+	boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
   boot.kernelParams = [
 	"quiet"
@@ -116,6 +118,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 
 }

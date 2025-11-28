@@ -26,6 +26,11 @@ in
 				tabstop = 2;
 				shiftwidth = 2;
 				smartindent = true;
+				cursorline = true;
+			};
+			globals = {
+				mapleader = " ";
+				maplocalleader = " ";
 			};
 			lsp = {
 				inlayHints.enable = true;
@@ -114,6 +119,22 @@ in
 				};
 			};
 
+			plugins.telescope = {
+				enable = true;
+			};
+
+			plugins.nerdy = {
+				enable = true;
+				enableTelescope = true;
+			};
+
+			plugins.which-key = {
+				enable = true;
+			};
+
+			plugins.lualine = {
+				enable = true;
+			};
 		};
 	};
 }

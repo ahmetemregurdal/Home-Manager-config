@@ -10,7 +10,7 @@
 			adminUsers = [ "aeg" ];
 			security.doas.enable = true;
 			security.mullvad.enable = true;
-			cachy.enable = true;
+			cachy.enable = false;
 			bluetooth.enable = true;
 			gaming.enable = true;
 		};
