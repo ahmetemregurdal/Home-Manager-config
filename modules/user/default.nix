@@ -23,7 +23,7 @@ let
 
 in
 {
-	home.stateVersion = "26.05";
+	home.stateVersion = "25.11";
 
   imports = importAll ./.;
 }
