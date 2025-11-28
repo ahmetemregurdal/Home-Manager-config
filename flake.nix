@@ -49,9 +49,14 @@
 			url = "github:nix-community/nix-index-database";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		nur = {
+			url = "github:nix-community/NUR";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, nix-index-database, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, nur, nix-index-database, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;
@@ -66,6 +71,7 @@
 			modules = [
 				{ config.networking.hostName = host; }
 				home-manager.nixosModules.home-manager
+				nur.modules.nixos.default
 				chaotic.nixosModules.default
 				nix-index-database.nixosModules.nix-index
 				{ programs.nix-index-database.comma.enable = true; }
