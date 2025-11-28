@@ -27,6 +27,11 @@ in
 			enable = true;
 			autoEnable = false;
 			polarity = theme.polarity;
+			cursor = {
+				package = pkgs.capitaine-cursors;
+				name = "capitaine-cursors";
+				size = 40;
+			};
 			image = pkgs.fetchurl {
 				url = theme.backgroundUrl;
 				sha256 = theme.backgroundSha256;

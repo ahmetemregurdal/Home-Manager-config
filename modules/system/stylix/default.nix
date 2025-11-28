@@ -49,8 +49,12 @@ in
 
 			targets.console.enable = true;
 			targets.plymouth.enable = true;
-			targets.regreet.enable = true;
-			targets.gtk.enable = true;
+
+			cursor = {
+				package = pkgs.capitaine-cursors;
+				name = "capitaine-cursors";
+				size = 40;
+			};
 		};
 	};
 }
