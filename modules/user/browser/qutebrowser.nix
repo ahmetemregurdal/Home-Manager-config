@@ -19,8 +19,28 @@ in
 			enable = true;
 			settings = {
 				changelog_after_upgrade = "patch";
-				colors.webpage.preferred_color_scheme = config.stylix.polarity;
-				colors.webpage.darkmode.enabled = (config.stylix.polarity == "dark");
+				colors.webpage = {
+					preferred_color_scheme = config.stylix.polarity;
+					darkmode.enabled = (config.stylix.polarity == "dark");
+				};
+				content = {
+					blocking.method = "both";
+					pdfjs = true;
+					prefers_reduced_motion = true;
+				};
+				scrolling.smooth = true;
+
+				downloads.remove_finished = 2000;
+
+				tabs = {
+					position = "left";
+					favicons.scale = 1.0;
+					width = "3%";
+					show = "multiple";
+					title.format = "{index} {audio}";
+				};
+
+				window.hide_decoration = true;
 
 				fileselect = {
 					handler = "external";
