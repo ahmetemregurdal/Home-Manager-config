@@ -25,14 +25,14 @@
 		programs.zsh.enable = true;
 		selfhosting = {
 			enable = true;
-			komga.enable = true;
+			media.enable = true;
 		};
 		specialisation = {
 			noservice = {
 				configuration = {
 					selfhosting = {
 						enable = lib.mkForce false;
-						komga.enable = lib.mkForce false;
+						media.enable = lib.mkForce false;
 					};
 				};
 			};

@@ -1,13 +1,9 @@
 {lib, pkgs, config, ...}:
 
 let
-	cfg = config.selfhosting.komga;
+	cfg = config.selfhosting.media;
 in
 {
-	options = {
-		selfhosting.komga.enable = lib.mkEnableOption "Enable Komga";
-	};
-
 	config = lib.mkIf cfg.enable {
 		services.komga = {
 			enable = true;
