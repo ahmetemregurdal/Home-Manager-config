@@ -10,6 +10,7 @@
 			adminUsers = [ "aeg" ];
 			security.doas.enable = true;
 			security.mullvad.enable = true;
+			security.firewall.enable = true;
 			cachy.enable = false;
 			bluetooth.enable = true;
 			displaymanager.enable = true;
@@ -22,5 +23,19 @@
 		users.users.aeg.description = "Ahmet Emre Gürdal";
 		users.users.aeg.shell = pkgs.zsh;
 		programs.zsh.enable = true;
+		selfhosting = {
+			enable = true;
+			komga.enable = true;
+		};
+		specialisation = {
+			noservice = {
+				configuration = {
+					selfhosting = {
+						enable = lib.mkForce false;
+						komga.enable = lib.mkForce false;
+					};
+				};
+			};
+		};
 	};
 }
