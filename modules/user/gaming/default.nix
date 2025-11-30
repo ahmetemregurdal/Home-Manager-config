@@ -2,8 +2,16 @@
 
 let
 	cfg = config.userSettings.gaming;
-	switchProd = ./nintendo-switch-prod.keys;
-	switchTitle = ./nintendo-switch-title.keys;
+	switchProd = pkgs.fetchurl {
+		url = "https://raw.githubusercontent.com/yeoyck/switch-prodkeys/master/v16.0.0/prod.keys";
+		sha256 = "sha256-DZgnJMbbj2RcljiKSDbzlkH/GyPZ9K4mvxs3H3kaY3Q=";
+		name = "switchprod.keys";
+	};
+	switchTitle = pkgs.fetchurl {
+		url = "https://raw.githubusercontent.com/yeoyck/switch-prodkeys/master/v16.0.0/title.keys";
+		sha256 = "sha256-HdyYWRnARfEl0aAYQLIJOVnF59DbBzaY99sursnCeVY=";
+		name = "switchtitle.keys";
+	};
 in
 {
 	options = {
@@ -25,8 +33,8 @@ in
 				ryujinx = {
 					package = pkgs.ryubing;
 					settings.runner = {
-						prod_keys = lib.mkForce (builtins.toString switchProd);
-						title_keys = lib.mkForce (builtins.toString switchTitle);
+						prod_keys = switchProd;
+						title_keys = switchTitle;
 					};
 				};
 			};
