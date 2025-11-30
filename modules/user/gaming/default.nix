@@ -2,15 +2,16 @@
 
 let
 	cfg = config.userSettings.gaming;
-	switchProd = pkgs.fetchurl {
-		url = "https://raw.githubusercontent.com/yeoyck/switch-prodkeys/master/v16.0.0/prod.keys";
-		sha256 = "sha256-DZgnJMbbj2RcljiKSDbzlkH/GyPZ9K4mvxs3H3kaY3Q=";
-		name = "switchprod.keys";
+	switchKeys = pkgs.fetchzip {
+		url = "https://files.prodkeys.net/Prodkeys.NET_v21-0-0.zip";
+		name = "switchKeys";
+		sha256 = "sha256-AExcHZjTU925k3If3l8saGXbTfAE8GAU/kvZeBboFhA=";
+		stripRoot = false;
 	};
-	switchTitle = pkgs.fetchurl {
-		url = "https://raw.githubusercontent.com/yeoyck/switch-prodkeys/master/v16.0.0/title.keys";
-		sha256 = "sha256-HdyYWRnARfEl0aAYQLIJOVnF59DbBzaY99sursnCeVY=";
-		name = "switchtitle.keys";
+	switchFirm = pkgs.fetchurl {
+		url = "https://github.com/THZoria/NX_Firmware/releases/download/21.0.0/Firmware.21.0.0.zip";
+		name = "switchFirm";
+		sha256 = "sha256-HFUtOMtXrO6Xaf3MZwee8VB3lZOolRz4WSl48d9zlKE=";
 	};
 in
 {
@@ -33,19 +34,26 @@ in
 				ryujinx = {
 					package = pkgs.ryubing;
 					settings.runner = {
-						prod_keys = switchProd;
-						title_keys = switchTitle;
+						prod_keys = "${switchKeys}/prod.keys";
+						title_keys = "${switchKeys}/title.keys";
 					};
 				};
 			};
 		};
 
 		home.file.".config/Ryujinx/system/prod.keys" = {
-			source = switchProd;
+			source = "${switchKeys}/prod.keys";
 			enable = true;
 		};
+
 		home.file.".config/Ryujinx/system/title.keys" = {
-			source = switchTitle;
+			source = "${switchKeys}/title.keys";
+			enable = true;
+		};
+
+# TODO: Make installation of firmware automated
+		home.file.".config/Ryujinx/FIRMWARE.zip" = {
+			source = switchFirm;
 			enable = true;
 		};
 	};
