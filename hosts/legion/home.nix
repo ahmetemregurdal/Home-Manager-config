@@ -8,15 +8,16 @@
 			editor = "nixvim";
 			stylix.enable = true;
 			nixvim.enable = true;
+			emacs.enable = true;
+			kitty.enable = true;
+			helix.enable = true;
 			pgp.enable = true;
 			rbw = {
 				enable = true;
 				mail = "ahmetemregurdal2008@gmail.com";
 			};
-			helix.enable = true;
 			git.enable = true;
 			xdg.enable = true;
-			# engineering.enable = true;
 			languages = {
 				cpp.enable = true;
 				nix.enable = true;

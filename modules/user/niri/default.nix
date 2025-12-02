@@ -133,5 +133,10 @@ in
 		services.wl-clip-persist = {
 			enable = true;
 		};
+
+		stylix.targets.fnott.enable = true;
+		services.fnott = {
+			enable = true;
+		};
 	};
 }
