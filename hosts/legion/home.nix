@@ -8,9 +8,7 @@
 			editor = "nixvim";
 			stylix.enable = true;
 			nixvim.enable = true;
-			emacs.enable = true;
-			kitty.enable = true;
-			helix.enable = true;
+			zathura.enable = true;
 			pgp.enable = true;
 			rbw = {
 				enable = true;

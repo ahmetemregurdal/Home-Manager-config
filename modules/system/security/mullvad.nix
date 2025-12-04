@@ -13,5 +13,7 @@ in
 			enable = true;
 			package = pkgs.mullvad-vpn;
 		};
+
+		services.resolved.enable = true;
 	};
 }

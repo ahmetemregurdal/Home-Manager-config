@@ -26,6 +26,7 @@
 		selfhosting = {
 			enable = true;
 			media.enable = true;
+			forgejo.enable = true;
 		};
 		specialisation = {
 			noservice = {
@@ -33,6 +34,7 @@
 					selfhosting = {
 						enable = lib.mkForce false;
 						media.enable = lib.mkForce false;
+						forgejo.enable = lib.mkForce false;
 					};
 				};
 			};
