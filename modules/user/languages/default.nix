@@ -8,6 +8,7 @@ in
 		userSettings.languages = {
 			cpp.enable = lib.mkEnableOption "Enable c/c++";
 			nix.enable = lib.mkEnableOption "Enable fancy nix";
+			qml.enable = lib.mkEnableOption "Enable QML";
 		};
 	};
 

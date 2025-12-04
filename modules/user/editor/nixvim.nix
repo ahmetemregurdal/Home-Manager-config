@@ -46,28 +46,33 @@ in
 							};
 						};
 					};
+					qmlls.enable = language.qml.enable;
 				};
 			};
 			plugins.treesitter = {
 				enable = true;
-				grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; lib.flatten ([
+				grammarPackages = with pkgs.vimPlugins.nvim-treesitter-parsers; lib.flatten ([
 						[
-						bash
-						json
-						lua
-						markdown
-						make
-						nix
-						regex
-						toml
-						vim
-						vimdoc
-						xml
-						yaml
+							bash
+							json
+							lua
+							markdown
+							make
+							nix
+							regex
+							toml
+							vim
+							vimdoc
+							xml
+							yaml
 						]
 
 						(lib.optionals language.cpp.enable [
 						 cpp
+						])
+
+						(lib.optionals language.qml.enable [
+							qmljs
 						])
 				]);
 
