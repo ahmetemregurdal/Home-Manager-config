@@ -19,7 +19,6 @@
 			languages = {
 				cpp.enable = true;
 				nix.enable = true;
-				qml.enable = true;
 			};
 			nixcord.enable = true;
 			signal.enable = true;
