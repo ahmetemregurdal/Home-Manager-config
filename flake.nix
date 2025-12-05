@@ -27,15 +27,6 @@
 			url = "github:kaylorben/nixcord";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		vlc = {
-			url = "path:./overlays/vlc";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-		plasma-manager = {
-			url = "github:nix-community/plasma-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
-			inputs.home-manager.follows = "home-manager";
-		};
 		nix-gaming = {
 			url = "github:fufexan/nix-gaming";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -49,14 +40,13 @@
 			url = "github:nix-community/nix-index-database";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
 		nur = {
 			url = "github:nix-community/NUR";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
-	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, vlc, nur, nix-index-database, ...}:
+	outputs = inputs@{self, nixpkgs, home-manager, niri, chaotic, nur, nix-index-database, ...}:
 
 	let
 		lib = inputs.nixpkgs.lib;
@@ -78,9 +68,6 @@
 				{
 					nixpkgs.overlays = [
 						niri.overlays.niri
-						(final: prev: {
-							libvlc = vlc.packages."x86_64-linux".vlc-optimized;
-						})
 					];
 					home-manager.useGlobalPkgs = true;
 					home-manager.extraSpecialArgs = {

@@ -22,7 +22,6 @@
 			};
 			nixcord.enable = true;
 			signal.enable = true;
-			elisa.enable = true;
 			shell = {
 				useful.enable = true;
 				useless.enable = true;
