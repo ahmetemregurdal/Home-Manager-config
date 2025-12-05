@@ -13,9 +13,6 @@ in
 		services.nginx = {
 			enable = true;
 			statusPage = true;
-			virtualHosts."localhost" = {
-				listen = [ { addr = "127.0.0.1"; port = 80; } ];
-			};
 			appendHttpConfig = ''
 				map $uri $safe_uri {
 					"~*[\n\r]" "";
