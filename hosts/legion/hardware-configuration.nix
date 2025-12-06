@@ -49,8 +49,8 @@
 		amdgpu.initrd.enable = false;
 		nvidia = {
 			modesetting.enable = true;
-			open = true;
 			nvidiaSettings = false;
+			open = true;
 			powerManagement.enable = true;
 			package = config.boot.kernelPackages.nvidiaPackages.production;
 			prime = {

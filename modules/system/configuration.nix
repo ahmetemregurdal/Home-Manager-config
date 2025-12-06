@@ -16,7 +16,7 @@
   boot.consoleLogLevel = 3;
   boot.initrd.verbose = false;
 
-	boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+	boot.kernelPackages = lib.mkDefault pkgs.linuxPackages;
 
   boot.kernelParams = [
 	"quiet"
