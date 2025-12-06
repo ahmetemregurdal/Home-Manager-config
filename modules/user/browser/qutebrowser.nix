@@ -23,6 +23,10 @@ in
 					url = "https://update.greasyfork.org/scripts/461288/Bullyforces.user.js";
 					sha256 = "1ppp1babzai5ch19pz051gq1zqqhmcjpwsld0gidryxwpx03gdr2";
 				})
+				(pkgs.fetchurl {
+					url = "https://raw.githubusercontent.com/torrq/rut-english/refs/heads/main/rutracker-in-english.user.js";
+					sha256 = "sha256-5PmJxtMiWSdLaIXpwATZEL9mlZo1DrRpiQunhbxl6uE=";
+				})
 			];
 			settings = {
 				changelog_after_upgrade = "patch";
