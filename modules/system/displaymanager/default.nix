@@ -11,8 +11,9 @@ in
 	config = lib.mkIf cfg.enable {
 		systemSettings.stylix.enable = true;
 		services.greetd.enable = true;
+		programs.regreet.cageArgs = [ "-s" "-m" "last" ];
 		services.greetd.settings.default_session = {
-			command = "${pkgs.cage}/bin/cage -s -mlast -- ${pkgs.regreet}/bin/regreet";
+			command = "${lib.getExe' pkgs.dbus "dbus-run-session"} ${lib.getExe pkgs.cage} ${lib.escapeShellArgs config.programs.regreet.cageArgs} -- ${lib.getExe config.programs.regreet.package}";
 			user = "greeter";
 		};
 		programs.regreet.enable = true;

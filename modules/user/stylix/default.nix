@@ -64,7 +64,8 @@ in
 			};
 			targets.gtk.enable = true;
 			targets.qt.enable = true;
-			targets.qt.platform = "gtk3";
+			# reenable if a kirigami app doesn't work
+			# targets.qt.platform = "gtk3";
 			targets.kde.enable = true;
 		};
 		home.packages = with pkgs; [
