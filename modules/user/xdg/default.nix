@@ -23,6 +23,9 @@ in
 			documents = "${config.home.homeDirectory}/Documents";
 			desktop = null;
 			publicShare = null;
+			extraConfig = {
+				XDG_BOOK_DIR = "${config.home.homeDirectory}/Media/Books";
+			};
 		};
 		xdg.mime.enable = true;
 		xdg.mimeApps.enable = true;

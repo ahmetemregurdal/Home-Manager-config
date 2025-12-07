@@ -37,7 +37,6 @@ in
 				content = {
 					blocking.method = "both";
 					pdfjs = true;
-					prefers_reduced_motion = true;
 				};
 				scrolling.smooth = true;
 
