@@ -55,6 +55,14 @@ in
 					url = "https://update.greasyfork.org/scripts/474544/OJUZ%20enhancement.user.js";
 					sha256 = "sha256-tGpo2bD/mOHNz9CFNdDRosQtkWNH1iK8kl6QkV0xbh0=";
 				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/457352/Stop%20wikipedia%20from%20screaming%20at%20me.user.js";
+					sha256 = "sha256-naOx1g4juvvMfiBV1ZIJR3271I2hhAJ6wIrETsQZuDI=";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/372/Expand%20Wikipedia%20Acronyms.user.js";
+					sha256 = "sha256-nMvGKkej8ljCr+yYG3MIvhxrkjOccUL/cK8YnJU4XFA=";
+				})
 			];
 			keyBindings = {
 				normal = {
