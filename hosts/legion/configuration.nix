@@ -3,7 +3,7 @@
 {
 	config = {
 		systemSettings = {
-			stylix.theme = "gruvbox-dark";
+			stylix.theme = "kanagawa";
 			stylix.enable = true;
 			niri.enable = true;
 			users = [ "aeg" ];
