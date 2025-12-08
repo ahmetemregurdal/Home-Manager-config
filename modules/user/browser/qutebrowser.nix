@@ -49,8 +49,14 @@ in
 				};
 				scrolling.smooth = true;
 
-				downloads.remove_finished = 2000;
+				downloads = {
+					remove_finished = 2000;
+					location.remember = false;
+				};
+
 				editor.command = config.userSettings.spawnEditorArgList ++ ["{}"];
+
+				confirm_quit = [ "downloads" ];
 
 				tabs = {
 					position = "left";
@@ -59,6 +65,13 @@ in
 					show = "multiple";
 					title.format = "{index} {audio}";
 				};
+
+				hints.radius = 0;
+
+				qt.args = [
+					"enable-gpu-rasterization"
+					"ignore-gpu-blocklist"
+				];
 				
 				window.hide_decoration = true;
 			};
