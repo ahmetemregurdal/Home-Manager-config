@@ -20,6 +20,7 @@ in
 		services.nginx.virtualHosts."localhost" = {
 			locations."/komga" = {
 				proxyPass = "http://127.0.0.1:25600/komga";
+				proxyWebsockets = true;
 				extraConfig = ''
 					proxy_set_header X-Forwarded-Host $host;
 					proxy_set_header X-Forwarded-Proto $scheme;
@@ -27,5 +28,7 @@ in
 				'';
 			};
 		};
+
+		systemd.services.komga.serviceConfig.ProtectHome = lib.mkForce false;
 	};
 }
