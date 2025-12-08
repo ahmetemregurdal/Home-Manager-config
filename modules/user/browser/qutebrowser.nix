@@ -43,6 +43,18 @@ in
 					url = "https://update.greasyfork.org/scripts/465176/CF%E8%A7%A3%E9%A2%98%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96.user.js";
 					sha256 = "sha256-gF3Q68oV3dt3doq3vaP/g1nJw1ZqQeiOW4PdDcRdPTs=";
 				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/369954/ac-predictor.user.js";
+					sha256 = "sha256-swv1x/rhQwbemJ+jNV376xlWGhAIo0Rv/02IjbABtpg=";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/383817/AtCoder%20Submission%20Status.user.js";
+					sha256 = "sha256-P0b+McTQGcWq6KgPy2c3mzk0YqmYNQqIjJ3z8hbAqKA=";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/474544/OJUZ%20enhancement.user.js";
+					sha256 = "sha256-tGpo2bD/mOHNz9CFNdDRosQtkWNH1iK8kl6QkV0xbh0=";
+				})
 			];
 			keyBindings = {
 				normal = {
