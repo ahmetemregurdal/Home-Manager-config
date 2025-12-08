@@ -28,6 +28,15 @@ in
 					sha256 = "sha256-5PmJxtMiWSdLaIXpwATZEL9mlZo1DrRpiQunhbxl6uE=";
 				})
 			];
+			keyBindings = {
+				normal = {
+					"!" = "cmd-set-text :open -t !";
+				};
+			};
+			searchEngines = {
+				DEFAULT = "https://duckduckgo.com/?q={}";
+				nix = "https://mynixos.com/search?q={}";
+			};
 			settings = {
 				changelog_after_upgrade = "patch";
 				colors.webpage = {
@@ -50,15 +59,8 @@ in
 					show = "multiple";
 					title.format = "{index} {audio}";
 				};
-
+				
 				window.hide_decoration = true;
-
-				fileselect = {
-					handler = "external";
-					single_file.command = [ term "-e" "yazi" "--chooser-file={}" "{dir}" ];
-					multiple_files.command = [ term "-e" "yazi" "--chooser-file={}" "{dir}" ];
-					folder.command = [ term "-e" "yazi" "--chooser-file={}" "{dir}" ];
-				};
 			};
 		};
 	};
