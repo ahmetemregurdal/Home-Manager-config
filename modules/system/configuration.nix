@@ -85,9 +85,20 @@
 
   environment.systemPackages = with pkgs; [
 	pciutils
-  	git
   #  wget
   ];
+
+	programs.git = {
+		enable = true;
+		config = {
+			safe = {
+				directory = [
+					"/etc/nixos"
+					"/home/aeg/.dotfiles"
+				];
+			};
+		};
+	};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -28,7 +28,7 @@ in
 		programs.btop.enable = true;
 
 		home.packages = with pkgs; [
-			atool p7zip unrar unzip
+			atool p7zip unrar unzip libqalculate
 		];
 	};
 }
