@@ -39,9 +39,5 @@ in
 				cmd = "nix-collect-garbage";
 			}
 		];
-
-		environment.systemPackages = [
-			pkgs.doas-sudo-shim
-		];
 	};
 }
