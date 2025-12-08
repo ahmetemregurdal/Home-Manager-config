@@ -14,7 +14,10 @@ in
 			enable = true;
 			baseIndex = 1;
 			keyMode = "vi";
-			terminal = "tmux-direct";
+			terminal = "xterm-256color";
+			escapeTime = 0;
+			shortcut = "a";
+			clock24 = true;
 		};
 		home.sessionVariables = {
 			TINTED_TMUX_OPTION_STATUSBAR = 1;
