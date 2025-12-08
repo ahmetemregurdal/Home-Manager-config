@@ -23,6 +23,7 @@
 			nixcord.enable = true;
 			signal.enable = true;
 			shell = {
+				tmux.enable = true;
 				useful.enable = true;
 				useless.enable = true;
 			};

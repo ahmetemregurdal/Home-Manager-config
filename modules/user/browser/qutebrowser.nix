@@ -46,7 +46,7 @@ in
 				tabs = {
 					position = "left";
 					favicons.scale = 1.0;
-					width = "4%";
+					width = "5%";
 					show = "multiple";
 					title.format = "{index} {audio}";
 				};
