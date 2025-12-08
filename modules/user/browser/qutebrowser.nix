@@ -27,6 +27,22 @@ in
 					url = "https://raw.githubusercontent.com/torrq/rut-english/refs/heads/main/rutracker-in-english.user.js";
 					sha256 = "sha256-5PmJxtMiWSdLaIXpwATZEL9mlZo1DrRpiQunhbxl6uE=";
 				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/371117/cf-fast-submit.user.js";
+					sha256 = "sha256-5rJo5VZGZqQGC6j4Ei1ovT76xHWIl4dpbLeIWqGeitQ=";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/511077/carrot-script.user.js";
+					sha256 = "09n0zvzpn2iial53qcflzf6akd7pd488zgm7q0qfc3f2ffjs8989";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/402180/Codeforces%20Performance.user.js";
+					sha256 = "sha256-s7oRjJWxzUIUvmUlNEOKOaJ5g9DZbU/sm3zwakz4ryY=";
+				})
+				(pkgs.fetchurl {
+					url = "https://update.greasyfork.org/scripts/465176/CF%E8%A7%A3%E9%A2%98%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96.user.js";
+					sha256 = "sha256-gF3Q68oV3dt3doq3vaP/g1nJw1ZqQeiOW4PdDcRdPTs=";
+				})
 			];
 			keyBindings = {
 				normal = {
