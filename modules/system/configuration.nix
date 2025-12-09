@@ -95,6 +95,7 @@
 				directory = [
 					"/etc/nixos"
 					"/home/aeg/.dotfiles"
+					"/home/aeg/.cache/nix/tarball-cache"
 				];
 			};
 		};
