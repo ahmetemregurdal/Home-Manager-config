@@ -20,6 +20,7 @@
 				nix.enable = true;
 			};
 			nixcord.enable = true;
+			halloy.enable = true;
 			shell = {
 				tmux.enable = true;
 				useful.enable = true;
