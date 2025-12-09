@@ -2,7 +2,7 @@
 
 let
 cfg = config.userSettings.stylix;
-theme = import (./. + "../../../themes" + ("/" + config.userSettings.stylix.theme));
+theme = import (./. + "../../../../themes" + ("/" + config.userSettings.stylix.theme));
 in
 {
 	options = {
@@ -14,7 +14,7 @@ in
 			};
 			theme = lib.mkOption {
 				default = if (osConfig.stylix.enable) then osConfig.systemSettings.stylix.theme else "gruvbox-dark-medium";
-				type = lib.types.enum (builtins.attrNames (lib.filterAttrs (name: type: type == "directory") (builtins.readDir ../../themes)));
+				type = lib.types.enum (builtins.attrNames (lib.filterAttrs (name: type: type == "directory") (builtins.readDir ../../../themes)));
 				description = "theme to use with stylix";
 			};
 		};
