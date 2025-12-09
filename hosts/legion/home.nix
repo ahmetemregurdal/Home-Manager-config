@@ -7,7 +7,6 @@
 			terminal = "kitty";
 			editor = "nixvim";
 			stylix.enable = true;
-			nixvim.enable = true;
 			zathura.enable = true;
 			pgp.enable = true;
 			rbw = {
@@ -21,7 +20,6 @@
 				nix.enable = true;
 			};
 			nixcord.enable = true;
-			signal.enable = true;
 			shell = {
 				tmux.enable = true;
 				useful.enable = true;

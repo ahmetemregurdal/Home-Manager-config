@@ -2,6 +2,8 @@
 
 {
 	home.packages = with pkgs; [
-		qbittorrent qalculate-qt
+		qbittorrent
+		qalculate-qt
+		signal-desktop-bin
 	];
 }
