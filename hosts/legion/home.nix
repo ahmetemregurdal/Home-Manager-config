@@ -21,6 +21,7 @@
 			};
 			nixcord.enable = true;
 			halloy.enable = true;
+			beets.enable = true;
 			shell = {
 				tmux.enable = true;
 				useful.enable = true;

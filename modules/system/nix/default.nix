@@ -23,5 +23,8 @@
 				download-buffer-size = 500000000;
 			};
 		};
+		programs.nh = {
+			enable = true;
+		};
 	};
 }

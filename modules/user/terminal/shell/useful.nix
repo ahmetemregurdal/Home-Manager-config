@@ -28,7 +28,14 @@ in
 		programs.btop.enable = true;
 
 		home.packages = with pkgs; [
-			atool p7zip unrar unzip libqalculate
+			atool
+			p7zip
+			unrar
+			unzip
+			libqalculate
+			shntool
+			flac
+			monkeysAudio
 		];
 	};
 }
