@@ -3,7 +3,7 @@
 {
 	config = {
 		systemSettings = {
-			stylix.theme = "kanagawa";
+			stylix.theme = "kanagawa-dragon";
 			stylix.enable = true;
 			niri.enable = true;
 			users = [ "aeg" ];
