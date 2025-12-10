@@ -23,9 +23,22 @@ in
 					"fetchart"
 					"embedart"
 					"fromfilename"
+					"convert"
 				];
 				lyrics = {
 					synced = true;
+				};
+				convert = {
+					auto = true;
+					delete_originals = true;
+					format = "AAC";
+					never_convert_lossy_files = true;
+					formats = {
+						aac = {
+							command = "ffmpeg -i $source -vn -c:a aac -q:a 6 $dest";
+							extension = "m4a";
+						};
+					};
 				};
 			};
 		};

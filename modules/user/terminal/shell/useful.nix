@@ -36,6 +36,7 @@ in
 			shntool
 			flac
 			monkeysAudio
+			ffmpeg
 		];
 	};
 }
