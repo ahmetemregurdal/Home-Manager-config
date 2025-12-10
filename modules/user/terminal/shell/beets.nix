@@ -24,6 +24,7 @@ in
 					"embedart"
 					"fromfilename"
 					"convert"
+					"replaygain"
 				];
 				lyrics = {
 					synced = true;
@@ -39,6 +40,13 @@ in
 							extension = "m4a";
 						};
 					};
+				};
+				replaygain = {
+					auto = true;
+					backend = "ffmpeg";
+					overwrite = true;
+					r128 = "flac m4a";
+					peak = "true";
 				};
 			};
 		};
