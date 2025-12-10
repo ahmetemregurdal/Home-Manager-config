@@ -25,6 +25,7 @@ in
 			publicShare = null;
 			extraConfig = {
 				XDG_BOOK_DIR = "${config.home.homeDirectory}/Media/Books";
+				XDG_SCREENSHOT_DIR = "${config.home.homeDirectory}/Screenshots";
 			};
 		};
 		xdg.mime.enable = true;

@@ -49,6 +49,7 @@ in
 					"Mod+L".action = focus-column-right;
 					"Mod+J".action = focus-workspace-down;
 					"Mod+K".action = focus-workspace-up;
+					"Print".action = spawn-sh "exec grim -g \"$(slurp -d -F ${config.stylix.fonts.monospace.name})\" \"${config.xdg.userDirs.extraConfig.XDG_SCREENSHOT_DIR}/$(date +'%Y-%m-%d %H:%M:%S.png')\"";
 				};
 				prefer-no-csd = true;
 				spawn-at-startup = [
@@ -127,6 +128,8 @@ in
 		};
 		home.packages = with pkgs; [
 			wl-clipboard
+			slurp
+			grim
 		];
 
 		services.wl-clip-persist = {
