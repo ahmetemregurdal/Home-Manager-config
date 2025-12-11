@@ -27,6 +27,7 @@ in
 			ELECTRON_OZONE_PLATFORM_HINT = "auto";
 			XDG_SESSION_TYPE = "wayland";
 		};
+
 		programs.niri = {
 			settings = {
 				binds = with config.lib.niri.actions; {
