@@ -85,7 +85,7 @@
 
   environment.systemPackages = with pkgs; [
 	pciutils
-  #  wget
+  	eddie
   ];
 
 	programs.git = {
