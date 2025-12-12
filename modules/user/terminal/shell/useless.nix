@@ -15,6 +15,7 @@ in
 			onefetch
 			fastfetch
 			figlet
+			asciinema
 		];
 	};
 }
