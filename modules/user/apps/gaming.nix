@@ -13,6 +13,16 @@ let
 		name = "switchFirm";
 		sha256 = "sha256-HFUtOMtXrO6Xaf3MZwee8VB3lZOolRz4WSl48d9zlKE=";
 	};
+
+	customRetroArch = pkgs.retroarch.withCores(cores: with pkgs.libretro; [
+		nestopia
+	]);
+
+	nesFirm = pkgs.fetchurl {
+		url = "https://raw.githubusercontent.com/Abdess/retroarch_system/libretro/Nintendo%20-%20Famicom%20Disk%20System/disksys.rom";
+		name = "nesFirm";
+		sha256 = "sha256-mcGEkO2QAtnG2Zm52NFb5cBRvfp8x+czGAU8mplLAXg=";
+	};
 in
 {
 	options = {
@@ -38,6 +48,9 @@ in
 						title_keys = "${switchKeys}/title.keys";
 					};
 				};
+				libretro = {
+					package = customRetroArch;
+				};
 			};
 		};
 
@@ -55,6 +68,18 @@ in
 		home.file.".config/Ryujinx/FIRMWARE.zip" = {
 			source = switchFirm;
 			enable = true;
+		};
+
+		home.file.".local/share/lutris/runners/retroarch/cores" = {
+			source = "${customRetroArch}/lib/retroarch/cores";
+		};
+
+		home.file."Games/BIOSs/disksys.rom" = {
+			source = nesFirm;
+		};
+
+		home.file.".config/retroarch/system/disksys.rom" = {
+			source = nesFirm;
 		};
 	};
 }
