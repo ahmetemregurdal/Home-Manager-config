@@ -123,9 +123,10 @@
 	programs.localsend.enable = true;
 
 	systemd.tmpfiles.rules = [
-		"a+ /home/aeg/ - - - - u:komga:rwx"
-		"a+ /home/aeg/Media/ - - - - u:komga:rwx"
+		"a+ /home/aeg/ - - - - u:komga:rx"
+		"a+ /home/aeg/Media/ - - - - u:komga:rx"
 		"A+ /home/aeg/Media/Books/ - - - - u:komga:rwx"
+		"a+ /home/aeg/Media/Books/ - - - - d:u:komga:rwx"
 	];
 
   # This value determines the NixOS release from which the default

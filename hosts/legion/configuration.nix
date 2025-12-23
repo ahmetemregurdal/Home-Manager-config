@@ -26,6 +26,7 @@
 			enable = true;
 			media.enable = true;
 			forgejo.enable = true;
+			llm.enable = true;
 		};
 		specialisation = {
 			noservice = {
@@ -34,6 +35,7 @@
 						enable = lib.mkForce false;
 						media.enable = lib.mkForce false;
 						forgejo.enable = lib.mkForce false;
+						llm.enable = lib.mkForce false;
 					};
 				};
 			};
