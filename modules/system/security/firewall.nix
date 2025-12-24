@@ -17,6 +17,9 @@ in
 			allowedUDPPorts = [
 				23230
 			];
+			trustedInterfaces = [
+				"tailscale0"
+			];
 		};
 	};
 }
