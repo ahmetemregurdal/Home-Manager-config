@@ -41,6 +41,10 @@ in
 					"XF86AudioMicMute".action = spawn-sh "exec swayosd-client --input-volume=mute-toggle";
 					"XF86MonBrightnessUp".action = spawn-sh "exec swayosd-client --brightness=raise";
 					"XF86MonBrightnessDown".action = spawn-sh "exec swayosd-client --brightness=lower";
+					"XF86AudioPlay".action = spawn-sh "exec playerctl play-pause";
+					"XF86AudioNext".action = spawn-sh "exec playerctl next";
+					"XF86AudioPrev".action = spawn-sh "exec playerctl previous";
+					"XF86Calculator".action = spawn-sh "exec qalculate-qt";
 					"Mod+Shift+E".action = quit { skip-confirmation = true;};
 					"Mod+O".action = toggle-overview;
 					"Mod+Shift+F".action = fullscreen-window;
@@ -50,12 +54,31 @@ in
 					"Mod+L".action = focus-column-right;
 					"Mod+J".action = focus-workspace-down;
 					"Mod+K".action = focus-workspace-up;
+					"Mod+W".action = toggle-column-tabbed-display;
+					"Mod+R".action = switch-preset-column-width;
+					"Mod+Space".action = switch-layout "next";
 					"Print".action = spawn-sh "exec grim -g \"$(slurp -d -F ${config.stylix.fonts.monospace.name})\" \"${config.xdg.userDirs.extraConfig.XDG_SCREENSHOT_DIR}/$(date +'%Y-%m-%d %H:%M:%S.png')\"";
 				};
 				prefer-no-csd = true;
 				spawn-at-startup = [
 					{ argv = [ "xwayland-satellite" ]; }
 				];
+				layout = {
+					gaps = 10;
+					preset-column-widths = [
+						{ proportion = 1. / 3.;}
+						{ proportion = 1. / 2.;}
+						{ proportion = 2. / 3.;}
+					];
+				};
+
+				input = {
+					keyboard = {
+						xkb = {
+							layout = "us,tr";
+						};
+					};
+				};
 			};
 		};
 		stylix.targets.niri.enable = true;
@@ -82,13 +105,13 @@ in
 					position = "top";
 					height = 30;
 					modules-left = [ "niri/workspaces" ];
-					modules-center = [ "clock" ];
-					modules-right = [ "backlight" "wireplumber" ];
+					modules-center = [ "niri/window" ];
+					modules-right = [ "niri/language" "backlight" "wireplumber" "battery" "clock" ];
 
 					clock = {
 						timezone = "Europe/Istanbul";
 						interval = 60;
-						format = "{:%H:%M}";
+						format = " {:%H:%M}";
 						tooltip-format = "<tt><small>{calendar}</small></tt>";
 						calendar = {
 							mode = "year";
@@ -105,6 +128,22 @@ in
 						};
 					};
 
+					"niri/language" = {
+						format = " {}";
+						format-en = "US";
+						format-tr = "TR";
+					};
+
+					"niri/window" = {
+						format = "{title}";
+						icon = true;
+						icon-size = 16;
+					};
+
+					mpris = {
+						format = "{artist} {album} - {title} {position}/{length}";
+					};
+
 					backlight = {
 						format = "{icon} {percent}%";
 						format-icons = [ "󰃜" "󰃛" "󰃚" "󰃞" "󰃝" "󰃟" "󰃠" ];
@@ -116,6 +155,11 @@ in
 						format-muted = " ";
 						tooltip = false;
 						format-icons = [ "" "" "" ];
+					};
+
+					battery = {
+						format = "{icon} {capacity}%";
+						format-icons = [ "" "" "" "" "" ];
 					};
 				};
 			};
@@ -131,6 +175,7 @@ in
 			wl-clipboard
 			slurp
 			grim
+			playerctl
 		];
 
 		services.wl-clip-persist = {
