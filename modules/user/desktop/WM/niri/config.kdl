@@ -68,6 +68,7 @@ binds {
 	Mod+J { focus-window-or-workspace-down; }
 	Mod+K { focus-window-or-workspace-up; }
 	Mod+L { focus-column-right; }
+	Mod+M { focus-monitor-next; }
 	Mod+O { toggle-overview; }
 	Mod+Q { close-window; }
 	Mod+R { switch-preset-column-width; }

@@ -38,6 +38,7 @@ in
 			compiledb
 			gnumake
 			zig
+			license-cli
 		];
 	};
 }
